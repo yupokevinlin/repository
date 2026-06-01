@@ -15,45 +15,45 @@
 
 /** Brand colors */
 export const brandColors = [
-  'brand',
-  'brand-muted',
-  'brand-subtle',
-  'brand-emphasis',
+  "brand",
+  "brand-muted",
+  "brand-subtle",
+  "brand-emphasis",
 ] as const;
 
 /** Neutral / gray scale */
 export const neutralColors = [
-  'neutral-50',
-  'neutral-100',
-  'neutral-200',
-  'neutral-300',
-  'neutral-400',
-  'neutral-500',
-  'neutral-600',
-  'neutral-700',
-  'neutral-800',
-  'neutral-900',
-  'neutral-950',
+  "neutral-50",
+  "neutral-100",
+  "neutral-200",
+  "neutral-300",
+  "neutral-400",
+  "neutral-500",
+  "neutral-600",
+  "neutral-700",
+  "neutral-800",
+  "neutral-900",
+  "neutral-950",
 ] as const;
 
 /** Semantic / status colors */
 export const semanticColors = [
-  'success',
-  'success-muted',
-  'warning',
-  'warning-muted',
-  'error',
-  'error-muted',
-  'info',
-  'info-muted',
+  "success",
+  "success-muted",
+  "warning",
+  "warning-muted",
+  "error",
+  "error-muted",
+  "info",
+  "info-muted",
 ] as const;
 
 /** Surface / background colors */
 export const surfaceColors = [
-  'surface',
-  'surface-raised',
-  'surface-overlay',
-  'surface-sunken',
+  "surface",
+  "surface-raised",
+  "surface-overlay",
+  "surface-sunken",
 ] as const;
 
 /** All custom colors combined — passed to tailwind-merge */
@@ -69,4 +69,3 @@ export type NeutralColor = (typeof neutralColors)[number];
 export type SemanticColor = (typeof semanticColors)[number];
 export type SurfaceColor = (typeof surfaceColors)[number];
 export type DesignColor = (typeof allCustomColors)[number];
-

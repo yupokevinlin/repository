@@ -1,8 +1,8 @@
-import { type ClassValue, clsx } from 'clsx';
-import { extendTailwindMerge } from 'tailwind-merge';
+import { type ClassValue, clsx } from "clsx";
+import { extendTailwindMerge } from "tailwind-merge";
 
-import { allCustomColors } from '../theme/colors';
-import { allCustomFontSizes } from '../theme/fontSizes';
+import { allCustomColors } from "../theme/colors";
+import { allCustomFontSizes } from "../theme/fontSizes";
 
 /**
  * A tailwind-merge instance extended with the design library's custom theme.
@@ -47,4 +47,3 @@ const twMerge = extendTailwindMerge({
 export function cn(...inputs: ClassValue[]): string {
   return twMerge(clsx(inputs));
 }
-

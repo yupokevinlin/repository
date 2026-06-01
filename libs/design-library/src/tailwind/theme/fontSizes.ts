@@ -15,32 +15,25 @@
 
 /** Display / heading sizes */
 export const displayFontSizes = [
-  'display-xl',
-  'display-lg',
-  'display-md',
-  'display-sm',
+  "display-xl",
+  "display-lg",
+  "display-md",
+  "display-sm",
 ] as const;
 
 /** Body text sizes */
 export const bodyFontSizes = [
-  'body-lg',
-  'body-md',
-  'body-sm',
-  'body-xs',
+  "body-lg",
+  "body-md",
+  "body-sm",
+  "body-xs",
 ] as const;
 
 /** Label / UI element sizes */
-export const labelFontSizes = [
-  'label-lg',
-  'label-md',
-  'label-sm',
-] as const;
+export const labelFontSizes = ["label-lg", "label-md", "label-sm"] as const;
 
 /** Code / monospace sizes */
-export const codeFontSizes = [
-  'code-lg',
-  'code-sm',
-] as const;
+export const codeFontSizes = ["code-lg", "code-sm"] as const;
 
 /** All custom font sizes combined — passed to tailwind-merge */
 export const allCustomFontSizes = [
@@ -55,4 +48,3 @@ export type BodyFontSize = (typeof bodyFontSizes)[number];
 export type LabelFontSize = (typeof labelFontSizes)[number];
 export type CodeFontSize = (typeof codeFontSizes)[number];
 export type DesignFontSize = (typeof allCustomFontSizes)[number];
-

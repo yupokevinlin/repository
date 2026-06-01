@@ -4,3 +4,12 @@
 /.nx/cache
 /.nx/workspace-data
 .nx/self-healing
+
+# Agent / AI tooling — maintained by external tools, not hand-edited source
+.agents/
+.cursor/
+.gemini/
+.opencode/
+.github/agents/
+.github/prompts/
+.github/skills/

@@ -1,18 +1,28 @@
-export { allCustomColors, brandColors, neutralColors, semanticColors, surfaceColors } from './colors';
-export type { BrandColor, DesignColor, NeutralColor, SemanticColor, SurfaceColor } from './colors';
-
+export type {
+  BrandColor,
+  DesignColor,
+  NeutralColor,
+  SemanticColor,
+  SurfaceColor,
+} from "./colors";
 export {
-  allCustomFontSizes,
-  bodyFontSizes,
-  codeFontSizes,
-  displayFontSizes,
-  labelFontSizes,
-} from './fontSizes';
+  allCustomColors,
+  brandColors,
+  neutralColors,
+  semanticColors,
+  surfaceColors,
+} from "./colors";
 export type {
   BodyFontSize,
   CodeFontSize,
   DesignFontSize,
   DisplayFontSize,
   LabelFontSize,
-} from './fontSizes';
-
+} from "./fontSizes";
+export {
+  allCustomFontSizes,
+  bodyFontSizes,
+  codeFontSizes,
+  displayFontSizes,
+  labelFontSizes,
+} from "./fontSizes";
