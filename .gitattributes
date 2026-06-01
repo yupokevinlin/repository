@@ -1,0 +1,44 @@
+# Normalize all text files to LF in the repository.
+# Git will still check out with native line endings on each OS,
+# but the stored content is always LF — silencing the CRLF warnings.
+* text=auto eol=lf
+
+# Explicitly LF — source & config files
+*.ts        text eol=lf
+*.tsx       text eol=lf
+*.js        text eol=lf
+*.jsx       text eol=lf
+*.mjs       text eol=lf
+*.cjs       text eol=lf
+*.mts       text eol=lf
+*.cts       text eol=lf
+*.json      text eol=lf
+*.jsonc     text eol=lf
+*.css       text eol=lf
+*.html      text eol=lf
+*.md        text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.sh        text eol=lf
+.gitattributes text eol=lf
+.gitignore  text eol=lf
+.prettierrc text eol=lf
+.prettierignore text eol=lf
+.eslintignore   text eol=lf
+
+# Shell hooks must always be LF or they break on Unix/macOS CI
+.husky/*    text eol=lf
+
+# Binary — never touch line endings
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.ico       binary
+*.webp      binary
+*.woff      binary
+*.woff2     binary
+*.ttf       binary
+*.eot       binary
+*.otf       binary
+

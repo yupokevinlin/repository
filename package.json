@@ -3,10 +3,20 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "prepare": "husky",
     "format": "nx format:write",
     "format:check": "nx format:check",
     "lint": "nx run-many -t lint",
     "lint:fix": "nx run-many -t lint --fix"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs,mts,cts}": [
+      "eslint --fix --max-warnings=0",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml,css,html}": [
+      "prettier --write"
+    ]
   },
   "private": true,
   "devDependencies": {
@@ -28,6 +38,8 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-simple-import-sort": "^13.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.7",
     "nx": "22.7.5",
     "prettier": "^3.8.1",
     "tailwindcss": "^4.3.0",
