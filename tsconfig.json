@@ -5,6 +5,9 @@
   "references": [
     {
       "path": "./libs/design-library"
+    },
+    {
+      "path": "./libs/storybook-host"
     }
   ]
 }
