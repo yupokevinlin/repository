@@ -21,3 +21,36 @@
 - The `nx-generate` skill handles generator discovery internally - don't call nx_docs just to look up generator syntax
 
 <!-- nx configuration end-->
+
+## Design Library (`libs/design-library`)
+
+### Tailwind CSS (v4)
+- Theme is configured via `@theme {}` in CSS — there is **no** `tailwind.config.js`
+- Custom color and font-size names are defined in `src/tailwind/theme/` (TypeScript) and must match the `--color-*` / `--font-size-*` CSS variables in `src/styles.css`
+
+### tailwind-merge v3 — `extendTailwindMerge` theme key names
+When extending `tailwindMerge` with custom theme values, use the correct `DefaultThemeGroupIds` keys:
+
+| What you're adding | Correct key | Wrong keys (TS2561) |
+|--------------------|-------------|---------------------|
+| Custom colors      | `color`     | `colors`, `colour`  |
+| Custom font sizes  | `text`      | `fontSize`, `font-size` |
+
+The `font-size` class group internally references `{theme: 'text'}` — so custom font-size scale values must be registered under `text`, not `font-size` or `fontSize`.
+
+```ts
+// ✅ Correct
+extendTailwindMerge({ extend: { theme: { color: [...], text: [...] } } });
+
+// ❌ Wrong — TS2561
+extendTailwindMerge({ extend: { theme: { colors: [...], fontSize: [...] } } });
+```
+
+### `cn()` utility
+- Location: `src/tailwind/tailwindMerge/tailwindMerge.ts`
+- Always use `cn()` (not raw string concatenation) for Tailwind class composition in all components
+- `cn()` = `clsx` (conditional composition) + theme-aware `tailwind-merge` (conflict resolution)
+
+```ts
+cn('text-red-500', 'text-lg');
+```
