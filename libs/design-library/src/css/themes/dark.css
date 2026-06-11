@@ -29,9 +29,9 @@
   --color-bg-primary: var(--primitive-green-500);
   --color-bg-primary-hover: var(--primitive-green-400);
   --color-bg-primary-active: var(--primitive-green-300);
-  --color-bg-primary-subtle: var(--primitive-green-950);
-  --color-bg-primary-subtle-hover: var(--primitive-green-900);
-  --color-bg-primary-subtle-active: var(--primitive-green-800);
+  --color-bg-primary-soft: var(--primitive-green-950);
+  --color-bg-primary-soft-hover: var(--primitive-green-900);
+  --color-bg-primary-soft-active: var(--primitive-green-800);
 
   --color-fg-primary: var(--primitive-neutral-0);
   --color-fg-primary-default: var(--primitive-green-400);
@@ -47,9 +47,9 @@
   --color-bg-secondary: var(--primitive-blue-500);
   --color-bg-secondary-hover: var(--primitive-blue-400);
   --color-bg-secondary-active: var(--primitive-blue-300);
-  --color-bg-secondary-subtle: var(--primitive-blue-950);
-  --color-bg-secondary-subtle-hover: var(--primitive-blue-900);
-  --color-bg-secondary-subtle-active: var(--primitive-blue-800);
+  --color-bg-secondary-soft: var(--primitive-blue-950);
+  --color-bg-secondary-soft-hover: var(--primitive-blue-900);
+  --color-bg-secondary-soft-active: var(--primitive-blue-800);
 
   --color-fg-secondary: var(--primitive-neutral-0);
   --color-fg-secondary-default: var(--primitive-blue-400);
@@ -65,9 +65,9 @@
   --color-bg-tertiary: var(--primitive-neutral-500);
   --color-bg-tertiary-hover: var(--primitive-neutral-400);
   --color-bg-tertiary-active: var(--primitive-neutral-300);
-  --color-bg-tertiary-subtle: var(--primitive-neutral-800);
-  --color-bg-tertiary-subtle-hover: var(--primitive-neutral-700);
-  --color-bg-tertiary-subtle-active: var(--primitive-neutral-600);
+  --color-bg-tertiary-soft: var(--primitive-neutral-800);
+  --color-bg-tertiary-soft-hover: var(--primitive-neutral-700);
+  --color-bg-tertiary-soft-active: var(--primitive-neutral-600);
 
   --color-fg-tertiary: var(--primitive-neutral-0);
   --color-fg-tertiary-default: var(--primitive-neutral-300);
@@ -83,9 +83,9 @@
   --color-bg-success: var(--primitive-green-500);
   --color-bg-success-hover: var(--primitive-green-400);
   --color-bg-success-active: var(--primitive-green-300);
-  --color-bg-success-subtle: var(--primitive-green-950);
-  --color-bg-success-subtle-hover: var(--primitive-green-900);
-  --color-bg-success-subtle-active: var(--primitive-green-800);
+  --color-bg-success-soft: var(--primitive-green-950);
+  --color-bg-success-soft-hover: var(--primitive-green-900);
+  --color-bg-success-soft-active: var(--primitive-green-800);
 
   --color-fg-success: var(--primitive-neutral-0);
   --color-fg-success-default: var(--primitive-green-400);
@@ -101,9 +101,9 @@
   --color-bg-error: var(--primitive-red-500);
   --color-bg-error-hover: var(--primitive-red-400);
   --color-bg-error-active: var(--primitive-red-300);
-  --color-bg-error-subtle: var(--primitive-red-950);
-  --color-bg-error-subtle-hover: var(--primitive-red-900);
-  --color-bg-error-subtle-active: var(--primitive-red-800);
+  --color-bg-error-soft: var(--primitive-red-950);
+  --color-bg-error-soft-hover: var(--primitive-red-900);
+  --color-bg-error-soft-active: var(--primitive-red-800);
 
   --color-fg-error: var(--primitive-neutral-0);
   --color-fg-error-default: var(--primitive-red-400);
@@ -119,9 +119,9 @@
   --color-bg-warning: var(--primitive-orange-500);
   --color-bg-warning-hover: var(--primitive-orange-400);
   --color-bg-warning-active: var(--primitive-orange-300);
-  --color-bg-warning-subtle: var(--primitive-orange-950);
-  --color-bg-warning-subtle-hover: var(--primitive-orange-900);
-  --color-bg-warning-subtle-active: var(--primitive-orange-800);
+  --color-bg-warning-soft: var(--primitive-orange-950);
+  --color-bg-warning-soft-hover: var(--primitive-orange-900);
+  --color-bg-warning-soft-active: var(--primitive-orange-800);
 
   --color-fg-warning: var(--primitive-neutral-0);
   --color-fg-warning-default: var(--primitive-orange-400);
@@ -137,9 +137,9 @@
   --color-bg-info: var(--primitive-blue-500);
   --color-bg-info-hover: var(--primitive-blue-400);
   --color-bg-info-active: var(--primitive-blue-300);
-  --color-bg-info-subtle: var(--primitive-blue-950);
-  --color-bg-info-subtle-hover: var(--primitive-blue-900);
-  --color-bg-info-subtle-active: var(--primitive-blue-800);
+  --color-bg-info-soft: var(--primitive-blue-950);
+  --color-bg-info-soft-hover: var(--primitive-blue-900);
+  --color-bg-info-soft-active: var(--primitive-blue-800);
 
   --color-fg-info: var(--primitive-neutral-0);
   --color-fg-info-default: var(--primitive-blue-400);
