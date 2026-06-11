@@ -1,0 +1,21 @@
+:root {
+  /* Success → green */
+  --role-success: var(--primitive-green-500);
+  --role-success-subtle: var(--primitive-green-50);
+  --role-success-strong: var(--primitive-green-700);
+
+  /* Error → red */
+  --role-error: var(--primitive-red-500);
+  --role-error-subtle: var(--primitive-red-50);
+  --role-error-strong: var(--primitive-red-700);
+
+  /* Warning → orange */
+  --role-warning: var(--primitive-orange-500);
+  --role-warning-subtle: var(--primitive-orange-50);
+  --role-warning-strong: var(--primitive-orange-700);
+
+  /* Info → blue */
+  --role-info: var(--primitive-blue-500);
+  --role-info-subtle: var(--primitive-blue-50);
+  --role-info-strong: var(--primitive-blue-700);
+}
