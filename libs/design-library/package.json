@@ -16,6 +16,16 @@
     "react-dom": ">=18"
   },
   "nx": {
-    "name": "design-library"
+    "name": "design-library",
+    "targets": {
+      "storybook": {
+        "options": {
+          "port": 5000
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@storybook/addon-docs": "^10.4.6"
   }
 }

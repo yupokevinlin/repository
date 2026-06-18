@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky",
+    "storybook": "nx run design-library:storybook",
     "format": "nx format:write",
     "format:check": "nx format:check",
     "lint": "nx run-many -t lint",
@@ -30,6 +31,7 @@
     "@nx/vite": "22.7.5",
     "@nx/web": "22.7.5",
     "@storybook/addon-a11y": "^10.4.1",
+    "@storybook/addon-docs": "^10.4.1",
     "@storybook/react-vite": "10.4.1",
     "@swc-node/register": "1.11.1",
     "@swc/cli": "~0.8.0",
