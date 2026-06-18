@@ -1,12 +1,19 @@
 import type { ComponentPropsWithRef, ReactNode } from "react";
 
 import { cn } from "../../../tailwind/tailwindMerge/tailwindMerge";
+import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 import {
   type ButtonSize,
   type ButtonStorybookState,
   ButtonStyles,
   type ButtonVariant,
 } from "./ButtonStyles";
+
+const spinnerSizeClass: Record<ButtonSize, string> = {
+  "8": "size-4",
+  "10": "size-5",
+  "12": "size-6",
+};
 
 export const buttonVariants = [
   "primary-solid",
@@ -41,6 +48,8 @@ export type ButtonProps = ComponentPropsWithRef<"button"> & {
   endIcon?: ReactNode;
   /** The button label. */
   children: ReactNode;
+  /** Overlays a centered spinner on the button content (content fades to invisible) and prevents interaction. Button retains its natural width. */
+  loading?: boolean;
   /** @internal For Storybook gallery use only — forces a visual pseudo-state. */
   _storybookState?: ButtonStorybookState;
 };
@@ -52,6 +61,8 @@ export const Button = ({
   endIcon,
   className: classNameProp,
   children,
+  loading,
+  disabled,
   _storybookState,
   ...remainingProps
 }: ButtonProps) => {
@@ -66,11 +77,33 @@ export const Button = ({
   return (
     <button
       {...remainingProps}
-      className={cn(buttonStyle, storybookStateStyle, className)}
+      disabled={disabled}
+      aria-busy={loading}
+      className={cn(
+        buttonStyle,
+        storybookStateStyle,
+        loading && "relative pointer-events-none",
+        className,
+      )}
     >
-      {startIcon && <span className={iconStyle}>{startIcon}</span>}
-      <span className={ButtonStyles.labelStyle}>{children}</span>
-      {endIcon && <span className={iconStyle}>{endIcon}</span>}
+      {startIcon && (
+        <span className={cn(iconStyle, loading && "opacity-0")}>
+          {startIcon}
+        </span>
+      )}
+      <span className={cn(ButtonStyles.labelStyle, loading && "opacity-0")}>
+        {children}
+      </span>
+      {endIcon && (
+        <span className={cn(iconStyle, loading && "opacity-0")}>{endIcon}</span>
+      )}
+      {loading && (
+        <span className="absolute inset-0 flex items-center justify-center">
+          <LoadingSpinner
+            className={cn(spinnerSizeClass[size], "text-inherit")}
+          />
+        </span>
+      )}
     </button>
   );
 };

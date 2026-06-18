@@ -9,12 +9,14 @@ const buttonStates: {
   label: string;
   state?: ButtonStorybookState;
   disabled?: boolean;
+  loading?: boolean;
 }[] = [
   { label: "rest" },
   { label: "hover", state: "hover" },
   { label: "active", state: "active" },
-  { label: "disabled", disabled: true },
   { label: "focus", state: "focus" },
+  { label: "loading", loading: true },
+  { label: "disabled", disabled: true },
 ];
 
 export const ButtonGallery = () => {
@@ -39,7 +41,7 @@ export const ButtonGallery = () => {
             </tr>
           </thead>
           <tbody>
-            {buttonStates.map(({ label, state, disabled }) => (
+            {buttonStates.map(({ label, state, disabled, loading }) => (
               <tr key={label}>
                 <StorybookGalleryTableCell className="bg-bg-hover text-fg-default text-[1rem] font-bold text-center whitespace-nowrap min-w-[10rem]">
                   {label}
@@ -53,6 +55,7 @@ export const ButtonGallery = () => {
                       variant={variant}
                       size={size}
                       disabled={disabled}
+                      loading={loading}
                       _storybookState={state}
                     >
                       Button
