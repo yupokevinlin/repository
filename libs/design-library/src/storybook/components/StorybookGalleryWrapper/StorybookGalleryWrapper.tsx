@@ -4,7 +4,7 @@ export const StorybookGalleryWrapper = ({
   children,
   ...props
 }: ComponentPropsWithRef<"div">) => (
-  <div className="theme-light" {...props}>
+  <div className="theme-light flex flex-col gap-[1rem]" {...props}>
     {children}
   </div>
 );

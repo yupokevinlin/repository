@@ -1,7 +1,12 @@
 import type { ComponentPropsWithRef, ReactNode } from "react";
 
 import { cn } from "../../../tailwind/tailwindMerge/tailwindMerge";
-import { ButtonStyles } from "./ButtonStyles";
+import {
+  type ButtonSize,
+  type ButtonStorybookState,
+  ButtonStyles,
+  type ButtonVariant,
+} from "./ButtonStyles";
 
 export const buttonVariants = [
   "primary-solid",
@@ -19,19 +24,20 @@ export const buttonVariants = [
   "destructive-solid",
   "destructive-soft",
   "destructive-outline",
-] as const;
+] as const satisfies ButtonVariant[];
 
-export type ButtonVariant = (typeof buttonVariants)[number];
+export const buttonSizes = ["8", "10", "12"] as const satisfies ButtonSize[];
 
-export const buttonSizes = ["8", "10", "12"] as const;
-
-export type ButtonSize = (typeof buttonSizes)[number];
+export type { ButtonSize, ButtonVariant };
 
 export type ButtonProps = ComponentPropsWithRef<"button"> & {
   variant?: ButtonVariant;
   size?: ButtonSize;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
+  children: ReactNode;
+  /** @internal For Storybook gallery use only — forces a visual pseudo-state. */
+  _storybookState?: ButtonStorybookState;
 };
 
 export const Button = ({
@@ -41,17 +47,25 @@ export const Button = ({
   endIcon,
   className: classNameProp,
   children,
+  _storybookState,
   ...remainingProps
 }: ButtonProps) => {
   const variant: ButtonVariant = variantProp ?? "primary-solid";
   const size: ButtonSize = sizeProp ?? "10";
   const className: string = classNameProp ?? "";
   const buttonStyle: string = ButtonStyles.buttonStyle({ variant, size });
+  const iconStyle: string = ButtonStyles.iconStyle({ size });
+  const storybookStateStyle: string = _storybookState
+    ? ButtonStyles.getStorybookStateStyle(variant, _storybookState)
+    : "";
   return (
-    <button {...remainingProps} className={cn(buttonStyle, className)}>
-      {startIcon && <span className="shrink-0">{startIcon}</span>}
-      {children}
-      {endIcon && <span className="shrink-0">{endIcon}</span>}
+    <button
+      {...remainingProps}
+      className={cn(buttonStyle, storybookStateStyle, className)}
+    >
+      {startIcon && <span className={iconStyle}>{startIcon}</span>}
+      <span className={ButtonStyles.labelStyle}>{children}</span>
+      {endIcon && <span className={iconStyle}>{endIcon}</span>}
     </button>
   );
 };
