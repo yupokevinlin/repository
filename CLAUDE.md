@@ -48,6 +48,17 @@ extendTailwindMerge({ extend: { theme: { color: [...], text: [...] } } });
 extendTailwindMerge({ extend: { theme: { colors: [...], fontSize: [...] } } });
 ```
 
+### Component file structure
+
+- One component per file; the file name must match the exported component name (e.g. `Button.tsx` exports `Button`)
+- Sub-components live inside the main component's folder in their own named sub-folder:
+  ```
+  Button/
+    Button.tsx
+    ButtonIcon/
+      ButtonIcon.tsx
+  ```
+
 ### `cn()` utility
 
 - Location: `src/tailwind/tailwindMerge/tailwindMerge.ts`

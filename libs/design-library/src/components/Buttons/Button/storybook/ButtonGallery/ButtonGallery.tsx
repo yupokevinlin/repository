@@ -1,38 +1,49 @@
+import { StorybookGalleryTable } from "../../../../../storybook/components/StorybookGalleryTable/StorybookGalleryTable";
+import { StorybookGalleryTableCell } from "../../../../../storybook/components/StorybookGalleryTable/StorybookGalleryTableCell/StorybookGalleryTableCell";
+import { StorybookGalleryTableHeader } from "../../../../../storybook/components/StorybookGalleryTable/StorybookGalleryTableHeader/StorybookGalleryTableHeader";
+import { StorybookGalleryWrapper } from "../../../../../storybook/components/StorybookGalleryWrapper/StorybookGalleryWrapper";
 import { Button, buttonSizes, buttonVariants } from "../../Button";
+
 export const ButtonGallery = () => {
+  const tableCellWidth = "min-w-[10rem]";
   return (
-    <div className="overflow-x-auto">
-      <table className="border-separate border-spacing-3">
+    <StorybookGalleryWrapper>
+      <StorybookGalleryTable>
         <thead>
           <tr>
-            <th />
+            <StorybookGalleryTableHeader className={tableCellWidth}>
+              {"variant"}
+            </StorybookGalleryTableHeader>
             {buttonVariants.map((variant) => (
-              <th
+              <StorybookGalleryTableHeader
                 key={variant}
-                className="text-xs font-medium text-fg-subtle whitespace-nowrap pb-2"
+                className={tableCellWidth}
               >
                 {variant}
-              </th>
+              </StorybookGalleryTableHeader>
             ))}
           </tr>
         </thead>
         <tbody>
           {buttonSizes.map((size) => (
             <tr key={size}>
-              <td className="text-xs font-medium text-fg-subtle pr-2 whitespace-nowrap">
-                size-{size}
-              </td>
+              <StorybookGalleryTableCell className="bg-bg-hover text-fg-default text-sm font-bold text-center whitespace-nowrap min-w-[10rem]">
+                size: {size}
+              </StorybookGalleryTableCell>
               {buttonVariants.map((variant) => (
-                <td key={variant}>
+                <StorybookGalleryTableCell
+                  key={variant}
+                  className={tableCellWidth}
+                >
                   <Button variant={variant} size={size}>
                     Button
                   </Button>
-                </td>
+                </StorybookGalleryTableCell>
               ))}
             </tr>
           ))}
         </tbody>
-      </table>
-    </div>
+      </StorybookGalleryTable>
+    </StorybookGalleryWrapper>
   );
 };
