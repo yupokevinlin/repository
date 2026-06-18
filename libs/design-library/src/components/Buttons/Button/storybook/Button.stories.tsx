@@ -6,7 +6,13 @@ import {
 } from "@storybook/addon-docs/blocks";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Button, type ButtonProps } from "../Button";
+import { StorybookUtils } from "../../../../storybook/utils/StorybookUtils/StorybookUtils";
+import {
+  Button,
+  type ButtonProps,
+  buttonSizes,
+  buttonVariants,
+} from "../Button";
 import { ButtonGallery } from "./ButtonGallery/ButtonGallery";
 
 const story: Meta<ButtonProps> = {
@@ -34,7 +40,7 @@ export const Example: StoryObj<ButtonProps> = {
 };
 Example.args = {
   children: "Button",
-  variant: "default-solid",
+  variant: "primary-solid",
   size: "10",
   disabled: false,
 };
@@ -42,29 +48,48 @@ Example.args = {
 Example.argTypes = {
   variant: {
     control: "select",
-    options: [
-      "primary-solid",
-      "primary-soft",
-      "primary-outline",
-      "secondary-solid",
-      "secondary-soft",
-      "secondary-outline",
-      "tertiary-solid",
-      "tertiary-soft",
-      "tertiary-outline",
-      "default-solid",
-      "default-soft",
-      "default-outline",
-      "destructive-solid",
-      "destructive-soft",
-      "destructive-outline",
-    ],
+    options: buttonVariants,
+    description:
+      "Visual style combining a color role (primary, secondary, tertiary, default, destructive) and a fill style (solid, soft, outline).",
+    table: {
+      type: {
+        summary: StorybookUtils.getTypesSummaryString(buttonVariants),
+      },
+      defaultValue: {
+        summary: "primary-solid",
+      },
+    },
   },
   size: {
     control: "select",
-    options: ["8", "10", "12"],
+    options: buttonSizes,
+    description:
+      'Height of the button as a Tailwind size unit (1 unit = 4px). "8" = 32px, "10" = 40px, "12" = 48px.',
+    table: {
+      type: {
+        summary: StorybookUtils.getTypesSummaryString(buttonSizes),
+      },
+      defaultValue: {
+        summary: "10",
+      },
+    },
   },
-  disabled: { control: "boolean" },
-  children: { control: "text" },
+  disabled: {
+    control: "boolean",
+    description: "Prevents interaction and applies disabled styles.",
+  },
+  children: {
+    control: "text",
+    description: "The button label.",
+  },
+  startIcon: {
+    description:
+      "Icon rendered to the left of the label. Sized automatically to match the button's size.",
+  },
+  endIcon: {
+    description:
+      "Icon rendered to the right of the label. Sized automatically to match the button's size.",
+  },
+  _storybookState: { table: { disable: true } },
 };
 export default story;

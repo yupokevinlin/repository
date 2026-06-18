@@ -13,6 +13,10 @@ export const StorybookGalleryTable = ({
 }: StorybookGalleryTableProps) => (
   <div className="sb-unstyled w-fit pr-5">
     {title && <p className="mb-2 text-[1.5rem] font-semibold">{title}</p>}
-    <table className={cn("border-collapse text-sm", className)} {...props} />
+    <table
+      className={cn("border-collapse text-sm", className)}
+      inert
+      {...props}
+    />
   </div>
 );

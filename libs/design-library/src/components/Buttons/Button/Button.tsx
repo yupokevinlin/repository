@@ -31,10 +31,15 @@ export const buttonSizes = ["8", "10", "12"] as const satisfies ButtonSize[];
 export type { ButtonSize, ButtonVariant };
 
 export type ButtonProps = ComponentPropsWithRef<"button"> & {
+  /** Visual style combining a color role (`primary`, `secondary`, `tertiary`, `default`, `destructive`) and a fill style (`solid`, `soft`, `outline`). Defaults to `"primary-solid"`. */
   variant?: ButtonVariant;
+  /** Height of the button as a Tailwind size unit (1 unit = 4px). `"8"` = 32px, `"10"` = 40px, `"12"` = 48px. Defaults to `"10"`. */
   size?: ButtonSize;
+  /** Icon rendered to the left of the label. Sized automatically to match the button's `size`. */
   startIcon?: ReactNode;
+  /** Icon rendered to the right of the label. Sized automatically to match the button's `size`. */
   endIcon?: ReactNode;
+  /** The button label. */
   children: ReactNode;
   /** @internal For Storybook gallery use only — forces a visual pseudo-state. */
   _storybookState?: ButtonStorybookState;
