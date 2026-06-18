@@ -41,7 +41,7 @@ export const ButtonGallery = () => {
           <tbody>
             {buttonStates.map(({ label, state, disabled }) => (
               <tr key={label}>
-                <StorybookGalleryTableCell className="bg-bg-hover text-fg-default text-sm font-bold text-center whitespace-nowrap min-w-[10rem]">
+                <StorybookGalleryTableCell className="bg-bg-hover text-fg-default text-[1rem] font-bold text-center whitespace-nowrap min-w-[10rem]">
                   {label}
                 </StorybookGalleryTableCell>
                 {buttonVariants.map((variant) => (

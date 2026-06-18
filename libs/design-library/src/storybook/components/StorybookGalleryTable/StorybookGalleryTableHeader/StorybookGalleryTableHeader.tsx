@@ -8,7 +8,7 @@ export const StorybookGalleryTableHeader = ({
 }: ComponentPropsWithRef<"th">) => (
   <th
     className={cn(
-      "px-4 h-12 text-center text-sm font-bold text-fg-default whitespace-nowrap",
+      "px-4 h-12 text-center text-[1rem] font-bold text-fg-default whitespace-nowrap",
       "bg-bg-hover border border-border-default",
       className,
     )}
