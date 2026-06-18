@@ -7,7 +7,7 @@
       "path": "./libs/design-library"
     },
     {
-      "path": "./libs/storybook-host"
+      "path": "./apps/storybook-host"
     }
   ]
 }

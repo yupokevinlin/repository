@@ -6,7 +6,7 @@ import * as path from "path";
 
 export default defineConfig(() => ({
   root: import.meta.dirname,
-  cacheDir: "../../node_modules/.vite/libs/storybook-host",
+  cacheDir: "../../node_modules/.vite/apps/storybook-host",
   plugins: [
     react(),
     dts({

@@ -18,7 +18,16 @@
   "nx": {
     "name": "design-library",
     "targets": {
+      "kill-port": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "npx --yes kill-port 5000"
+        }
+      },
       "storybook": {
+        "dependsOn": [
+          "kill-port"
+        ],
         "options": {
           "port": 5000
         }
