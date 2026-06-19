@@ -43,6 +43,7 @@ Example.args = {
   variant: "primary-solid",
   size: "10",
   disabled: false,
+  loading: false,
 };
 
 Example.argTypes = {
