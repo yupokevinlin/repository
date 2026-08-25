@@ -92,27 +92,16 @@ depends on the whole wave being done.** Do these strictly in order.
       with a `globalTypes` toolbar toggle. From here on every gallery must render
       in both.
 
-- [ ] **0.6 Port `Typography` and `Heading`** — **BLOCKED, needs a decision.**
-      The North Pacific Materials implementation takes an `as` prop
-      (`as?: T extends "p" | "span" | "div"`), which §11 forbids outright. It
-      cannot be ported as written.
+- [x] **0.6 Port `Typography` and `Heading`.** Ported, not copied — the sibling
+      repo's scale (`title-*`, `micro-*`, serif compound variants) does not
+      exist here, so both are bound to this repo's `fontSizes.ts` instead.
 
-      Text is the one place §11 did not anticipate: unlike `Button` or `Link`,
-      there is no single correct element for "some text", and a heading's level
-      is a document-structure decision the component cannot make for itself.
-      Three ways to resolve it:
-
-      - **A — split by element.** `Text` renders `<span>`, `Paragraph` renders
-        `<p>`, `Heading` takes a required `level: 1–6`. Zero polymorphism,
-        fully inside §11, but adds a component and diverges from the sibling
-        repo's API.
-      - **B — a closed element union.** `Typography` takes
-        `element?: "p" | "span" | "div"` and `Heading` takes `level: 1–6`. Not
-        `ElementType`, so none of the typing or semantic problems §11 exists to
-        prevent — but it is still an element switch.
-      - **C — port as-is** and carve `Typography`/`Heading` out of §11.
-
-      A or B, then update §11 with the carve-out. Do not port `as`.
+      §11 gained a carve-out (§11.0): both take `as` as a **closed union** —
+      `Typography` is `"span" | "p" | "div"` defaulting to `"span"`, `Heading`
+      is `"h1"…"h6"` defaulting to `"h2"`. Not `ElementType`, so none of the
+      typing or semantic escapes §11 prevents are reachable. Level and size stay
+      independent props. The generics in the sibling implementation were
+      dropped; each union's members share one prop surface.
 
 - [x] **0.7 Backfill the three existing components.** Add `Button.spec.tsx`,
       `TextInput.spec.tsx` and `LoadingSpinner.spec.tsx` to the §18 standard, and
@@ -356,7 +345,7 @@ These are open at the project level. If an item runs into one, stop and ask.
 
 | Wave                         | Items | Done |
 | ---------------------------- | ----- | ---- |
-| 0 — foundations              | 7     | 6    |
+| 0 — foundations              | 7     | 7    |
 | 1 — independent primitives   | 14    | 0    |
 | 2 — shared internals         | 9     | 0    |
 | 3 — form controls            | 11    | 0    |

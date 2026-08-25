@@ -603,6 +603,35 @@ not negotiable — it decides the keyboard contract (Space _and_ Enter activate 
 button; only Enter follows a link), what the context menu offers, and what a
 screen reader announces.
 
+### 11.0 The one carve-out: `Typography` and `Heading`
+
+Text is the single exception, and it is narrow.
+
+Every other component in this package has one correct element, decided by what
+it _is_. Text does not: there is no single right element for "some words", and a
+heading's level is a **document-structure** decision that depends on where it
+sits in the outline — something a reusable component cannot know.
+
+So both take an `as` prop, bounded by a **closed union**:
+
+| Component    | `as` accepts             | Default  |
+| ------------ | ------------------------ | -------- |
+| `Typography` | `"span" \| "p" \| "div"` | `"span"` |
+| `Heading`    | `"h1" … "h6"`            | `"h2"`   |
+
+The distinction that keeps this inside the rule: `as` here is **not
+`ElementType`**. It cannot take an arbitrary component, so none of the typing
+problems or semantic escapes §11 exists to prevent are reachable. Each union's
+members also share one prop surface, so no generic is needed.
+
+`Heading` defaults to `h2` rather than `h1` deliberately — `h1` is the page
+title and belongs to the page, so a shared component should not default to
+emitting one.
+
+**Level and size are separate props.** A section heading that must be `h3` for
+the outline but should look small is `as="h3" size="label-lg"` — never an `h5`
+chosen for its size. Do not extend this carve-out to any other component.
+
 ### 11.1 The library never imports a router
 
 Navigation is supplied by the consumer **as children**, so this package stays

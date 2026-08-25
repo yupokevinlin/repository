@@ -33,3 +33,26 @@ export {
   type LoadingSpinnerVariant,
   loadingSpinnerVariants,
 } from "./components/LoadingSpinner";
+
+// Components — Typography
+export {
+  Heading,
+  type HeadingElement,
+  headingElements,
+  type HeadingFontFamily,
+  type HeadingProps,
+  type HeadingSize,
+  type HeadingWeight,
+} from "./components/Heading";
+export {
+  Typography,
+  type TypographyElement,
+  typographyElements,
+  typographyFontFamilies,
+  type TypographyFontFamily,
+  type TypographyProps,
+  type TypographySize,
+  typographySizes,
+  type TypographyWeight,
+  typographyWeights,
+} from "./components/Typography";
