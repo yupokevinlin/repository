@@ -1,10 +1,7 @@
 // @ts-check
-import { FlatCompat } from "@eslint/eslintrc";
 import nx from "@nx/eslint-plugin";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import tseslint from "typescript-eslint";
-
-const compat = new FlatCompat({ baseDirectory: import.meta.dirname });
 
 export default tseslint.config(
   // ── Nx module-boundary enforcement (applies workspace-wide) ──────────────
@@ -19,6 +16,7 @@ export default tseslint.config(
       "**/node_modules/**",
       "**/.nx/**",
       "**/coverage/**",
+      "**/out-tsc/**",
     ],
   },
 
@@ -38,6 +36,12 @@ export default tseslint.config(
     },
     rules: {
       // ── TypeScript tweaks ──────────────────────────────────────────────
+      // CLAUDE.md mandates Array<T> over T[]; the default preset autofixes
+      // the other way, which silently contradicts the documented convention.
+      "@typescript-eslint/array-type": [
+        "error",
+        { default: "generic", readonly: "generic" },
+      ],
       "@typescript-eslint/consistent-type-imports": [
         "error",
         { prefer: "type-imports", fixStyle: "inline-type-imports" },

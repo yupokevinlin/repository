@@ -44,6 +44,6 @@ const twMerge = extendTailwindMerge({
  * cn('text-display-lg', 'text-body-sm') // → 'text-body-sm'
  * cn('px-4', condition && 'px-6')       // → 'px-4' or 'px-6'
  */
-export function cn(...inputs: ClassValue[]): string {
+export function cn(...inputs: Array<ClassValue>): string {
   return twMerge(clsx(inputs));
 }

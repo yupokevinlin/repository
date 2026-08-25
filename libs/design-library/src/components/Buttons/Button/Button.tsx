@@ -31,9 +31,13 @@ export const buttonVariants = [
   "destructive-solid",
   "destructive-soft",
   "destructive-outline",
-] as const satisfies ButtonVariant[];
+] as const satisfies Array<ButtonVariant>;
 
-export const buttonSizes = ["8", "10", "12"] as const satisfies ButtonSize[];
+export const buttonSizes = [
+  "8",
+  "10",
+  "12",
+] as const satisfies Array<ButtonSize>;
 
 export type { ButtonSize, ButtonVariant };
 

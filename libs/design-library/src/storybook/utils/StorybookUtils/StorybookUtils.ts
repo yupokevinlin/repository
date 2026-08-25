@@ -1,4 +1,4 @@
-const getTypesSummaryString = (types: readonly string[]): string => {
+const getTypesSummaryString = (types: ReadonlyArray<string>): string => {
   return types.join("|");
 };
 

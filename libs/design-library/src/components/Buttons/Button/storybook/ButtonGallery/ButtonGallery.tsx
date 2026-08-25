@@ -5,12 +5,12 @@ import { StorybookGalleryWrapper } from "../../../../../storybook/components/Sto
 import { Button, buttonSizes, buttonVariants } from "../../Button";
 import type { ButtonStorybookState } from "../../ButtonStyles";
 
-const buttonStates: {
+const buttonStates: Array<{
   label: string;
   state?: ButtonStorybookState;
   disabled?: boolean;
   loading?: boolean;
-}[] = [
+}> = [
   { label: "rest" },
   { label: "hover", state: "hover" },
   { label: "active", state: "active" },

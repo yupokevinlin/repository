@@ -24,6 +24,18 @@
 
 ## Design Library (`libs/design-library`)
 
+> **Before creating or modifying any component in this package, read
+> [`libs/design-library/AGENTS.md`](libs/design-library/AGENTS.md) in full and follow it.**
+> It is the authoritative component-authoring contract: the primitive rule, the required
+> files, the definition of done, the canonical size scale, the prop-naming lexicon, and the
+> accessibility, testing and theming requirements. The notes below are workspace-level
+> context only and do not replace it.
+>
+> **To pick up a component task, start from**
+> [`libs/design-library/IMPLEMENTATION.md`](libs/design-library/IMPLEMENTATION.md) —
+> the ordered build queue. Take the lowest-numbered unfinished item; the order is a
+> dependency graph, not a preference.
+
 ### Tailwind CSS (v4)
 
 - Theme is configured via `@theme {}` in CSS — there is **no** `tailwind.config.js`

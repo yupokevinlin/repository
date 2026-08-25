@@ -12,7 +12,7 @@ export const loadingSpinnerVariants = [
   "tertiary",
   "default",
   "destructive",
-] as const satisfies LoadingSpinnerVariant[];
+] as const satisfies Array<LoadingSpinnerVariant>;
 
 export type { LoadingSpinnerVariant };
 
