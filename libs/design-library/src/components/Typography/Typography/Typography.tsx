@@ -1,6 +1,6 @@
 import type { ComponentPropsWithRef, ReactNode } from "react";
 
-import { cn } from "../../tailwind/tailwindMerge/tailwindMerge";
+import { cn } from "../../../tailwind/tailwindMerge/tailwindMerge";
 import {
   type TypographyElement,
   typographyFontFamilies,
@@ -9,7 +9,7 @@ import {
   TypographyStyles,
   type TypographyWeight,
   typographyWeights,
-} from "./TypographyStyles";
+} from "../TypographyStyles";
 
 export const typographySizes = [
   "display-xl",

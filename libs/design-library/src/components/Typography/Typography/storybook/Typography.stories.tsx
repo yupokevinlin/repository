@@ -7,7 +7,7 @@ import {
 } from "@storybook/addon-docs/blocks";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { StorybookUtils } from "../../../storybook/utils/StorybookUtils/StorybookUtils";
+import { StorybookUtils } from "../../../../storybook/utils/StorybookUtils/StorybookUtils";
 import {
   Typography,
   typographyElements,

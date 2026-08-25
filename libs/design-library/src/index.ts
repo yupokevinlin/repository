@@ -43,8 +43,6 @@ export {
   type HeadingProps,
   type HeadingSize,
   type HeadingWeight,
-} from "./components/Heading";
-export {
   Typography,
   type TypographyElement,
   typographyElements,

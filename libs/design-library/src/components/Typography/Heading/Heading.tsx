@@ -1,13 +1,13 @@
 import type { ComponentPropsWithRef, ReactNode } from "react";
 
-import { cn } from "../../tailwind/tailwindMerge/tailwindMerge";
+import { cn } from "../../../tailwind/tailwindMerge/tailwindMerge";
 import {
   type HeadingElement,
   type TypographyFontFamily,
   type TypographySize,
   TypographyStyles,
   type TypographyWeight,
-} from "../Typography/TypographyStyles";
+} from "../TypographyStyles";
 
 export const headingElements = [
   "h1",

@@ -1,7 +1,7 @@
-import { StorybookGalleryTable } from "../../../../storybook/components/StorybookGalleryTable/StorybookGalleryTable";
-import { StorybookGalleryTableCell } from "../../../../storybook/components/StorybookGalleryTable/StorybookGalleryTableCell/StorybookGalleryTableCell";
-import { StorybookGalleryTableHeader } from "../../../../storybook/components/StorybookGalleryTable/StorybookGalleryTableHeader/StorybookGalleryTableHeader";
-import { StorybookGalleryWrapper } from "../../../../storybook/components/StorybookGalleryWrapper/StorybookGalleryWrapper";
+import { StorybookGalleryTable } from "../../../../../storybook/components/StorybookGalleryTable/StorybookGalleryTable";
+import { StorybookGalleryTableCell } from "../../../../../storybook/components/StorybookGalleryTable/StorybookGalleryTableCell/StorybookGalleryTableCell";
+import { StorybookGalleryTableHeader } from "../../../../../storybook/components/StorybookGalleryTable/StorybookGalleryTableHeader/StorybookGalleryTableHeader";
+import { StorybookGalleryWrapper } from "../../../../../storybook/components/StorybookGalleryWrapper/StorybookGalleryWrapper";
 import type { HeadingSize } from "../../Heading";
 import { Heading, headingElements } from "../../Heading";
 

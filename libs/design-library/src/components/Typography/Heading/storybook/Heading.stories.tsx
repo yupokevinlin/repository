@@ -7,12 +7,12 @@ import {
 } from "@storybook/addon-docs/blocks";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { StorybookUtils } from "../../../storybook/utils/StorybookUtils/StorybookUtils";
+import { StorybookUtils } from "../../../../storybook/utils/StorybookUtils/StorybookUtils";
 import {
   typographyFontFamilies,
   typographySizes,
   typographyWeights,
-} from "../../Typography";
+} from "../../Typography/Typography";
 import { Heading, headingElements, type HeadingProps } from "../Heading";
 import { HeadingGallery } from "./HeadingGallery/HeadingGallery";
 
