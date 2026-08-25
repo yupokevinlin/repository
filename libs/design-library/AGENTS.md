@@ -818,12 +818,37 @@ add a second one without an explicit decision.
 
 ---
 
-## 17. Themes
+## 17. Themes and the brand layer
 
-Every gallery renders in **both** light and dark. `.storybook/preview.ts`
-currently hardcodes `theme-light` in its decorator — replace that with a
-`globalTypes` toolbar toggle before building Tier 1, or render both themes
-side by side in each gallery. A component proven in one theme is not proven.
+### 17.1 The brand layer
+
+**Only six files differ between copies of this library.** Everything else —
+components, hooks, `src/tailwind/**`, the `@theme inline` registration, this
+document — is shared verbatim, so the copies stay diffable.
+
+| Brand file                 | Holds                              |
+| -------------------------- | ---------------------------------- |
+| `src/css/primitives.css`   | raw colour ramps                   |
+| `src/css/themes/light.css` | semantic token → primitive mapping |
+| `src/css/themes/dark.css`  | the same, for dark                 |
+| `src/css/fonts.css`        | `--font-sans`, `--font-mono`       |
+| `src/css/typography.css`   | `--text-*` values                  |
+| `src/css/elevation.css`    | `--shadow-*` values                |
+
+Step and token **names** are shared — they must match `fontSizes.ts` and
+`colors.ts`, which feed tailwind-merge, and the unions in the style files. Only
+the **values** are brand. A marketing site may make `--text-body-sm` fluid with
+`clamp()` while an ERP pins it, and the same `text-body-sm` class works in both.
+
+Never put a brand value anywhere but these six files. A raw colour, font stack,
+font size or shadow in `tailwind.css`, a `cva` file or a component is a bug —
+it forks the copies at a point that cannot be diffed.
+
+### 17.2 Both themes, always
+
+Every gallery renders in **both** light and dark. `.storybook/preview.ts` has a
+`globalTypes` toolbar toggle offering Light, Dark and **Side by side** — review
+galleries in the third. A component proven in one theme is not proven.
 
 Colours come from semantic tokens only. **Never** a raw hex, `oklch()`, or a
 Tailwind palette colour (`bg-blue-600`) inside a component.

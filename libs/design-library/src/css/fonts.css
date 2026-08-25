@@ -1,0 +1,14 @@
+/* =============================================================================
+   BRAND — font families.
+
+   One of the four brand files. Everything outside src/css/ is shared verbatim
+   between design-library copies; brand differences live here and here only.
+   ============================================================================= */
+
+@theme {
+  --font-sans:
+    "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono:
+    ui-monospace, "Cascadia Mono", Consolas, "SF Mono", "Roboto Mono", monospace;
+}

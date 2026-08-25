@@ -1,7 +1,16 @@
 @import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   BRAND LAYER — the only files that differ between copies of this library.
+   Everything below this import block, and everything outside src/css/, is
+   shared verbatim.
+   --------------------------------------------------------------------------- */
 @import "../primitives.css";
 @import "../themes/light.css";
 @import "../themes/dark.css";
+@import "../fonts.css";
+@import "../typography.css";
+@import "../elevation.css";
 
 @theme inline {
   /* =====================
@@ -168,62 +177,6 @@
   --color-presence-online: var(--color-presence-online);
   --color-presence-away: var(--color-presence-away);
   --color-presence-offline: var(--color-presence-offline);
-}
-
-/* ===========================================================================
-   Scales that are theme-independent: type, elevation, motion.
-   =========================================================================== */
-@theme {
-  /* ── Font families ────────────────────────────────────────────────────── */
-  --font-sans:
-    "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system,
-    "Helvetica Neue", Arial, sans-serif;
-  --font-mono:
-    ui-monospace, "Cascadia Mono", Consolas, "SF Mono", "Roboto Mono", monospace;
-
-  /* ── Type scale ───────────────────────────────────────────────────────────
-     Names must match src/tailwind/theme/fontSizes.ts, which feeds
-     tailwind-merge. Registered under the `text` namespace, not `font-size`.
-     ─────────────────────────────────────────────────────────────────────── */
-  --text-display-xl: 4rem;
-  --text-display-xl--line-height: 1.05;
-  --text-display-lg: 3rem;
-  --text-display-lg--line-height: 1.1;
-  --text-display-md: 2.25rem;
-  --text-display-md--line-height: 1.15;
-  --text-display-sm: 1.75rem;
-  --text-display-sm--line-height: 1.2;
-
-  --text-body-lg: 1.125rem;
-  --text-body-lg--line-height: 1.6;
-  --text-body-md: 1rem;
-  --text-body-md--line-height: 1.6;
-  --text-body-sm: 0.875rem;
-  --text-body-sm--line-height: 1.55;
-  --text-body-xs: 0.8125rem;
-  --text-body-xs--line-height: 1.5;
-
-  --text-label-lg: 0.9375rem;
-  --text-label-lg--line-height: 1.4;
-  --text-label-md: 0.875rem;
-  --text-label-md--line-height: 1.4;
-  --text-label-sm: 0.75rem;
-  --text-label-sm--line-height: 1.35;
-
-  --text-code-lg: 0.875rem;
-  --text-code-lg--line-height: 1.5;
-  --text-code-sm: 0.75rem;
-  --text-code-sm--line-height: 1.45;
-
-  /* ── Elevation ────────────────────────────────────────────────────────────
-     Two steps only. `raised` for cards and panels, `overlay` for anything
-     rendered through Portal above the page.
-     ─────────────────────────────────────────────────────────────────────── */
-  --shadow-raised:
-    0 1px 2px var(--primitive-black-a5), 0 4px 12px var(--primitive-black-a5);
-  --shadow-overlay:
-    0 4px 10px var(--primitive-black-a10),
-    0 12px 32px var(--primitive-black-a10);
 }
 
 /* ===========================================================================

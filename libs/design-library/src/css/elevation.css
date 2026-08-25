@@ -1,0 +1,14 @@
+/* =============================================================================
+   BRAND — elevation.
+
+   Two steps only. `raised` for cards and panels, `overlay` for anything
+   rendered through Portal above the page.
+   ============================================================================= */
+
+@theme {
+  --shadow-raised:
+    0 1px 2px var(--primitive-black-a5), 0 4px 12px var(--primitive-black-a5);
+  --shadow-overlay:
+    0 4px 10px var(--primitive-black-a10),
+    0 12px 32px var(--primitive-black-a10);
+}

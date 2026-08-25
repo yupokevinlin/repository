@@ -1,0 +1,52 @@
+/* =============================================================================
+   BRAND — the type scale.
+
+   Step NAMES are shared: they must match src/tailwind/theme/fontSizes.ts, which
+   feeds tailwind-merge, and the union in TypographyStyles.ts. Step VALUES are
+   brand, and may differ between copies of the library — a marketing site can
+   make these fluid with clamp(), an ERP wants them fixed so a dense grid does
+   not reflow as the window resizes.
+
+   Registered under the `text` namespace, never `font-size`.
+   ============================================================================= */
+
+@theme {
+  /* Display — page titles and hero text. */
+  --text-display-xl: 4rem;
+  --text-display-xl--line-height: 1.05;
+  --text-display-xl--letter-spacing: -0.02em;
+  --text-display-lg: 3rem;
+  --text-display-lg--line-height: 1.1;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-md: 2.25rem;
+  --text-display-md--line-height: 1.15;
+  --text-display-md--letter-spacing: -0.01em;
+  --text-display-sm: 1.75rem;
+  --text-display-sm--line-height: 1.2;
+  --text-display-sm--letter-spacing: -0.01em;
+
+  /* Body — prose and record values. */
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.6;
+  --text-body-md: 1rem;
+  --text-body-md--line-height: 1.6;
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.55;
+  --text-body-xs: 0.8125rem;
+  --text-body-xs--line-height: 1.5;
+
+  /* Label — UI text. Fixed line heights so controls align on a grid. */
+  --text-label-lg: 0.9375rem;
+  --text-label-lg--line-height: 1.5rem;
+  --text-label-md: 0.875rem;
+  --text-label-md--line-height: 1.25rem;
+  --text-label-sm: 0.75rem;
+  --text-label-sm--line-height: 1rem;
+
+  /* Code — container numbers, deal numbers, HS codes, money. Pair with the
+     `numeric` utility for tabular figures. */
+  --text-code-lg: 0.875rem;
+  --text-code-lg--line-height: 1.5;
+  --text-code-sm: 0.75rem;
+  --text-code-sm--line-height: 1.45;
+}
