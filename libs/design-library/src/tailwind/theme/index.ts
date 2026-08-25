@@ -4,9 +4,11 @@ export type {
   ErrorColor,
   GlobalColor,
   InfoColor,
+  PresenceColor,
   PrimaryColor,
   SecondaryColor,
   SuccessColor,
+  SurfaceColor,
   TertiaryColor,
   WarningColor,
 } from "./colors";
@@ -16,9 +18,11 @@ export {
   errorColors,
   globalColors,
   infoColors,
+  presenceColors,
   primaryColors,
   secondaryColors,
   successColors,
+  surfaceColors,
   tertiaryColors,
   warningColors,
 } from "./colors";

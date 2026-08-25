@@ -153,4 +153,134 @@
   --color-border-info: var(--color-border-info);
   --color-border-info-hover: var(--color-border-info-hover);
   --color-border-info-active: var(--color-border-info-active);
+
+  /* =====================
+     Surfaces & overlay
+  ===================== */
+  --color-bg-surface: var(--color-bg-surface);
+  --color-bg-surface-raised: var(--color-bg-surface-raised);
+  --color-bg-popover: var(--color-bg-popover);
+  --color-bg-scrim: var(--color-bg-scrim);
+
+  /* =====================
+     Presence
+  ===================== */
+  --color-presence-online: var(--color-presence-online);
+  --color-presence-away: var(--color-presence-away);
+  --color-presence-offline: var(--color-presence-offline);
+}
+
+/* ===========================================================================
+   Scales that are theme-independent: type, elevation, motion.
+   =========================================================================== */
+@theme {
+  /* ── Font families ────────────────────────────────────────────────────── */
+  --font-sans:
+    "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono:
+    ui-monospace, "Cascadia Mono", Consolas, "SF Mono", "Roboto Mono", monospace;
+
+  /* ── Type scale ───────────────────────────────────────────────────────────
+     Names must match src/tailwind/theme/fontSizes.ts, which feeds
+     tailwind-merge. Registered under the `text` namespace, not `font-size`.
+     ─────────────────────────────────────────────────────────────────────── */
+  --text-display-xl: 4rem;
+  --text-display-xl--line-height: 1.05;
+  --text-display-lg: 3rem;
+  --text-display-lg--line-height: 1.1;
+  --text-display-md: 2.25rem;
+  --text-display-md--line-height: 1.15;
+  --text-display-sm: 1.75rem;
+  --text-display-sm--line-height: 1.2;
+
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.6;
+  --text-body-md: 1rem;
+  --text-body-md--line-height: 1.6;
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.55;
+  --text-body-xs: 0.8125rem;
+  --text-body-xs--line-height: 1.5;
+
+  --text-label-lg: 0.9375rem;
+  --text-label-lg--line-height: 1.4;
+  --text-label-md: 0.875rem;
+  --text-label-md--line-height: 1.4;
+  --text-label-sm: 0.75rem;
+  --text-label-sm--line-height: 1.35;
+
+  --text-code-lg: 0.875rem;
+  --text-code-lg--line-height: 1.5;
+  --text-code-sm: 0.75rem;
+  --text-code-sm--line-height: 1.45;
+
+  /* ── Elevation ────────────────────────────────────────────────────────────
+     Two steps only. `raised` for cards and panels, `overlay` for anything
+     rendered through Portal above the page.
+     ─────────────────────────────────────────────────────────────────────── */
+  --shadow-raised:
+    0 1px 2px var(--primitive-black-a5), 0 4px 12px var(--primitive-black-a5);
+  --shadow-overlay:
+    0 4px 10px var(--primitive-black-a10),
+    0 12px 32px var(--primitive-black-a10);
+}
+
+/* ===========================================================================
+   Utilities
+   =========================================================================== */
+
+/* Money, quantities, container numbers — anything that must align in a column.
+   Pairs tabular figures with the mono family in one class. */
+@utility numeric {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Replaces the ScrollArea component, which was cut as a composite.
+   Any region you make scrollable also needs tabindex="0" and an accessible
+   name to be reachable by keyboard. */
+@utility scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-strong) transparent;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-border-strong);
+    border-radius: 9999px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-fg-subtle);
+  }
+}
+
+/* Stacking order for portalled overlays. The library does not use the browser
+   top layer (no native <dialog>), so the order is explicit and must be shared.
+   Higher wins; leave gaps so an app can slot something between. */
+@utility z-dropdown {
+  z-index: 1000;
+}
+@utility z-sticky {
+  z-index: 1100;
+}
+@utility z-popover {
+  z-index: 1200;
+}
+@utility z-drawer {
+  z-index: 1300;
+}
+@utility z-modal {
+  z-index: 1400;
+}
+@utility z-toast {
+  z-index: 1500;
+}
+@utility z-tooltip {
+  z-index: 1600;
 }

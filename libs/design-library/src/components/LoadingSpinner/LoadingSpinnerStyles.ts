@@ -7,8 +7,15 @@ export type LoadingSpinnerVariant =
   | "default"
   | "destructive";
 
+export type LoadingSpinnerSize = "4" | "5" | "6";
+
 export const spinnerStyle = cva(["animate-spin shrink-0"], {
   variants: {
+    size: {
+      "4": "size-4",
+      "5": "size-5",
+      "6": "size-6",
+    },
     variant: {
       primary: "text-fg-primary-default",
       secondary: "text-fg-secondary-default",
@@ -18,6 +25,7 @@ export const spinnerStyle = cva(["animate-spin shrink-0"], {
     },
   },
   defaultVariants: {
+    size: "5",
     variant: "default",
   },
 });

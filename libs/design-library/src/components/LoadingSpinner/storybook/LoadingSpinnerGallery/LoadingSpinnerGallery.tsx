@@ -2,15 +2,22 @@ import { StorybookGalleryTable } from "../../../../storybook/components/Storyboo
 import { StorybookGalleryTableCell } from "../../../../storybook/components/StorybookGalleryTable/StorybookGalleryTableCell/StorybookGalleryTableCell";
 import { StorybookGalleryTableHeader } from "../../../../storybook/components/StorybookGalleryTable/StorybookGalleryTableHeader/StorybookGalleryTableHeader";
 import { StorybookGalleryWrapper } from "../../../../storybook/components/StorybookGalleryWrapper/StorybookGalleryWrapper";
-import { LoadingSpinner, loadingSpinnerVariants } from "../../LoadingSpinner";
+import {
+  LoadingSpinner,
+  loadingSpinnerSizes,
+  loadingSpinnerVariants,
+} from "../../LoadingSpinner";
 
 export const LoadingSpinnerGallery = () => {
   const tableCellWidth = "min-w-[8rem]";
   return (
     <StorybookGalleryWrapper>
-      <StorybookGalleryTable title="LoadingSpinner">
+      <StorybookGalleryTable title="variant × size">
         <thead>
           <tr>
+            <StorybookGalleryTableHeader className={tableCellWidth}>
+              {"size"}
+            </StorybookGalleryTableHeader>
             {loadingSpinnerVariants.map((variant) => (
               <StorybookGalleryTableHeader
                 key={variant}
@@ -22,19 +29,25 @@ export const LoadingSpinnerGallery = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            {loadingSpinnerVariants.map((variant) => (
-              <StorybookGalleryTableCell
-                key={variant}
-                className={tableCellWidth}
-              >
-                <LoadingSpinner
-                  variant={variant}
-                  className="size-[2rem] mx-auto"
-                />
+          {loadingSpinnerSizes.map((size) => (
+            <tr key={size}>
+              <StorybookGalleryTableCell className="bg-bg-hover text-fg-default text-[1rem] font-bold text-center whitespace-nowrap min-w-[8rem]">
+                {size}
               </StorybookGalleryTableCell>
-            ))}
-          </tr>
+              {loadingSpinnerVariants.map((variant) => (
+                <StorybookGalleryTableCell
+                  key={variant}
+                  className={tableCellWidth}
+                >
+                  <LoadingSpinner
+                    variant={variant}
+                    size={size}
+                    className="mx-auto"
+                  />
+                </StorybookGalleryTableCell>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </StorybookGalleryTable>
     </StorybookGalleryWrapper>

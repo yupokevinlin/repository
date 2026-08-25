@@ -148,4 +148,22 @@
   --color-border-info: var(--primitive-blue-500);
   --color-border-info-hover: var(--primitive-blue-600);
   --color-border-info-active: var(--primitive-blue-700);
+
+  /* =====================
+     Surfaces & overlay
+  ===================== */
+  --color-bg-surface: var(--primitive-neutral-0);
+  --color-bg-surface-raised: var(--primitive-neutral-0);
+  --color-bg-popover: var(--primitive-neutral-0);
+  --color-bg-scrim: var(--primitive-black-a40);
+
+  /* =====================
+     Presence
+     Presence is a state, like severity, but a separate family so that a
+     green "online" dot and a green "success" badge never mean the same
+     thing in one view.
+  ===================== */
+  --color-presence-online: var(--primitive-green-500);
+  --color-presence-away: var(--primitive-yellow-500);
+  --color-presence-offline: var(--primitive-neutral-400);
 }

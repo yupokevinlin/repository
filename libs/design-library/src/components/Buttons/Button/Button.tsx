@@ -1,7 +1,10 @@
 import type { ComponentPropsWithRef, ReactNode } from "react";
 
 import { cn } from "../../../tailwind/tailwindMerge/tailwindMerge";
-import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
+import {
+  LoadingSpinner,
+  type LoadingSpinnerSize,
+} from "../../LoadingSpinner/LoadingSpinner";
 import {
   type ButtonSize,
   type ButtonStorybookState,
@@ -9,10 +12,11 @@ import {
   type ButtonVariant,
 } from "./ButtonStyles";
 
-const spinnerSizeClass: Record<ButtonSize, string> = {
-  "8": "size-4",
-  "10": "size-5",
-  "12": "size-6",
+/** Each button height pairs with the matching spinner step from the §4 scale. */
+const spinnerSizeForButtonSize: Record<ButtonSize, LoadingSpinnerSize> = {
+  "8": "4",
+  "10": "5",
+  "12": "6",
 };
 
 export const buttonVariants = [
@@ -104,7 +108,8 @@ export const Button = ({
       {loading && (
         <span className="absolute inset-0 flex items-center justify-center">
           <LoadingSpinner
-            className={cn(spinnerSizeClass[size], "text-inherit")}
+            size={spinnerSizeForButtonSize[size]}
+            className="text-inherit"
           />
         </span>
       )}

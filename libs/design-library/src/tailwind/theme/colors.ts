@@ -133,6 +133,29 @@ export const infoColors = [
   "border-info-active",
 ] as const;
 
+/**
+ * Surfaces above the page. `bg-popover` is deliberately distinct from
+ * `bg-surface` so an overlay reads as floating rather than inline, and
+ * `bg-scrim` is the wash behind a modal.
+ */
+export const surfaceColors = [
+  "bg-surface",
+  "bg-surface-raised",
+  "bg-popover",
+  "bg-scrim",
+] as const;
+
+/**
+ * Presence is a state, like severity, but a separate family so that a green
+ * "online" dot and a green "success" badge never mean the same thing in one
+ * view.
+ */
+export const presenceColors = [
+  "presence-online",
+  "presence-away",
+  "presence-offline",
+] as const;
+
 export const allCustomColors = [
   ...globalColors,
   ...disabledColors,
@@ -143,6 +166,8 @@ export const allCustomColors = [
   ...errorColors,
   ...warningColors,
   ...infoColors,
+  ...surfaceColors,
+  ...presenceColors,
 ] as const;
 
 export type GlobalColor = (typeof globalColors)[number];
@@ -154,4 +179,6 @@ export type SuccessColor = (typeof successColors)[number];
 export type ErrorColor = (typeof errorColors)[number];
 export type WarningColor = (typeof warningColors)[number];
 export type InfoColor = (typeof infoColors)[number];
+export type SurfaceColor = (typeof surfaceColors)[number];
+export type PresenceColor = (typeof presenceColors)[number];
 export type DesignColor = (typeof allCustomColors)[number];

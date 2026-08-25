@@ -1,5 +1,10 @@
 import { cva } from "class-variance-authority";
 
+import {
+  focusRingForcedStyle,
+  focusRingStyle,
+} from "../../../tailwind/focus/focusRing";
+
 export type ButtonVariant =
   | "primary-solid"
   | "primary-soft"
@@ -23,7 +28,7 @@ export const buttonStyle = cva(
   [
     "inline-flex items-center justify-center font-medium rounded-md",
     "transition-colors duration-150 cursor-pointer",
-    "focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed",
+    focusRingStyle,
     "disabled:bg-bg-disabled disabled:text-fg-disabled disabled:border-border-disabled disabled:cursor-not-allowed",
   ],
   {
@@ -97,77 +102,77 @@ const storybookStateStyles: Record<
   "primary-solid": {
     hover: "bg-bg-primary-hover",
     active: "bg-bg-primary-active",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-primary",
+    focus: `${focusRingForcedStyle} outline-border-primary`,
   },
   "primary-soft": {
     hover: "bg-bg-primary-soft-hover",
     active: "bg-bg-primary-soft-active",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-primary",
+    focus: `${focusRingForcedStyle} outline-border-primary`,
   },
   "primary-outline": {
     hover: "bg-bg-primary-soft",
     active: "bg-bg-primary-soft-hover",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-primary",
+    focus: `${focusRingForcedStyle} outline-border-primary`,
   },
   "secondary-solid": {
     hover: "bg-bg-secondary-hover",
     active: "bg-bg-secondary-active",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-secondary",
+    focus: `${focusRingForcedStyle} outline-border-secondary`,
   },
   "secondary-soft": {
     hover: "bg-bg-secondary-soft-hover",
     active: "bg-bg-secondary-soft-active",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-secondary",
+    focus: `${focusRingForcedStyle} outline-border-secondary`,
   },
   "secondary-outline": {
     hover: "bg-bg-secondary-soft",
     active: "bg-bg-secondary-soft-hover",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-secondary",
+    focus: `${focusRingForcedStyle} outline-border-secondary`,
   },
   "tertiary-solid": {
     hover: "bg-bg-tertiary-hover",
     active: "bg-bg-tertiary-active",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-tertiary",
+    focus: `${focusRingForcedStyle} outline-border-tertiary`,
   },
   "tertiary-soft": {
     hover: "bg-bg-tertiary-soft-hover",
     active: "bg-bg-tertiary-soft-active",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-tertiary",
+    focus: `${focusRingForcedStyle} outline-border-tertiary`,
   },
   "tertiary-outline": {
     hover: "bg-bg-tertiary-soft",
     active: "bg-bg-tertiary-soft-hover",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-tertiary",
+    focus: `${focusRingForcedStyle} outline-border-tertiary`,
   },
   "default-solid": {
     hover: "bg-bg-active",
     active: "bg-bg-active",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-strong",
+    focus: `${focusRingForcedStyle} outline-border-strong`,
   },
   "default-soft": {
     hover: "bg-bg-hover",
     active: "bg-bg-active",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-default",
+    focus: `${focusRingForcedStyle} outline-border-default`,
   },
   "default-outline": {
     hover: "bg-bg-hover",
     active: "bg-bg-active",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-strong",
+    focus: `${focusRingForcedStyle} outline-border-strong`,
   },
   "destructive-solid": {
     hover: "bg-bg-error-hover",
     active: "bg-bg-error-active",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-error",
+    focus: `${focusRingForcedStyle} outline-border-error`,
   },
   "destructive-soft": {
     hover: "bg-bg-error-soft-hover",
     active: "bg-bg-error-soft-active",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-error",
+    focus: `${focusRingForcedStyle} outline-border-error`,
   },
   "destructive-outline": {
     hover: "bg-bg-error-soft",
     active: "bg-bg-error-soft-hover",
-    focus: "outline-2 outline-offset-2 outline-dashed outline-border-error",
+    focus: `${focusRingForcedStyle} outline-border-error`,
   },
 };
 

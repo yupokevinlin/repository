@@ -71,7 +71,7 @@ depends on the whole wave being done.** Do these strictly in order.
       rename to `index.ts`) and `Inputs/TextInput/index.ts` (currently
       `export *` — make the re-exports explicit).
 
-- [ ] **0.3 Tokens.** In `src/css/`: - ~~Severity family for `warning`, `success` and `info`~~ — **already done.**
+- [x] **0.3 Tokens.** In `src/css/`: - ~~Severity family for `warning`, `success` and `info`~~ — **already done.**
       All four families exist in `colors.ts` and are fully defined in both
       `themes/light.css` and `themes/dark.css`, 12 variables each. - Presence tokens — `--color-presence-online` / `-away` / `-offline`, kept
       separate from severity so a green dot and a green badge do not collide - Overlay tokens — scrim colour and opacity, a popover surface distinct from
@@ -80,23 +80,41 @@ depends on the whole wave being done.** Do these strictly in order.
       `::-webkit-scrollbar`. This replaces the `ScrollArea` component, which was
       deliberately cut.
 
-- [ ] **0.4 Focus ring.** Create `src/tailwind/focus/focusRing.ts` exporting the
+- [x] **0.4 Focus ring.** Create `src/tailwind/focus/focusRing.ts` exporting the
       shared geometry, lifted from `ButtonStyles.ts`:
       `focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed`.
       Variant strings supply only the ring colour from then on. `ButtonStyles.ts`
       currently repeats this in its base array **and** in all fifteen
       `storybookStateStyles` entries — collapse those to the shared fragment.
 
-- [ ] **0.5 Storybook dark theme.** `.storybook/preview.ts` hardcodes
+- [x] **0.5 Storybook dark theme.** `.storybook/preview.ts` hardcodes
       `theme-light` in its decorator, so no gallery has ever proven dark. Replace
       with a `globalTypes` toolbar toggle. From here on every gallery must render
       in both.
 
-- [ ] **0.6 Port `Typography` and `Heading`** from the North Pacific Materials
-      repo. Everything below assumes a text primitive exists; without it the type
-      scale gets re-invented inside each component.
+- [ ] **0.6 Port `Typography` and `Heading`** — **BLOCKED, needs a decision.**
+      The North Pacific Materials implementation takes an `as` prop
+      (`as?: T extends "p" | "span" | "div"`), which §11 forbids outright. It
+      cannot be ported as written.
 
-- [ ] **0.7 Backfill the three existing components.** Add `Button.spec.tsx`,
+      Text is the one place §11 did not anticipate: unlike `Button` or `Link`,
+      there is no single correct element for "some text", and a heading's level
+      is a document-structure decision the component cannot make for itself.
+      Three ways to resolve it:
+
+      - **A — split by element.** `Text` renders `<span>`, `Paragraph` renders
+        `<p>`, `Heading` takes a required `level: 1–6`. Zero polymorphism,
+        fully inside §11, but adds a component and diverges from the sibling
+        repo's API.
+      - **B — a closed element union.** `Typography` takes
+        `element?: "p" | "span" | "div"` and `Heading` takes `level: 1–6`. Not
+        `ElementType`, so none of the typing or semantic problems §11 exists to
+        prevent — but it is still an element switch.
+      - **C — port as-is** and carve `Typography`/`Heading` out of §11.
+
+      A or B, then update §11 with the carve-out. Do not port `as`.
+
+- [x] **0.7 Backfill the three existing components.** Add `Button.spec.tsx`,
       `TextInput.spec.tsx` and `LoadingSpinner.spec.tsx` to the §18 standard, and
       give `LoadingSpinner` a real `size` prop — today `Button` sizes it by
       injecting `size-4` / `size-5` / `size-6` through a `spinnerSizeClass`
@@ -338,7 +356,7 @@ These are open at the project level. If an item runs into one, stop and ask.
 
 | Wave                         | Items | Done |
 | ---------------------------- | ----- | ---- |
-| 0 — foundations              | 7     | 2    |
+| 0 — foundations              | 7     | 6    |
 | 1 — independent primitives   | 14    | 0    |
 | 2 — shared internals         | 9     | 0    |
 | 3 — form controls            | 11    | 0    |
