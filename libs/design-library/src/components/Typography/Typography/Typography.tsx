@@ -16,6 +16,9 @@ export const typographySizes = [
   "display-lg",
   "display-md",
   "display-sm",
+  "title-lg",
+  "title-md",
+  "title-sm",
   "body-lg",
   "body-md",
   "body-sm",
@@ -23,6 +26,9 @@ export const typographySizes = [
   "label-lg",
   "label-md",
   "label-sm",
+  "micro-lg",
+  "micro-md",
+  "micro-sm",
   "code-lg",
   "code-sm",
 ] as const satisfies Array<TypographySize>;
@@ -51,7 +57,7 @@ export type TypographyProps = ComponentPropsWithRef<"span"> & {
   as?: TypographyElement;
   /** Step on the type scale. Line height rides along with each step. Defaults to `"body-md"`. */
   size?: TypographySize;
-  /** Defaults to `"normal"`, or `"medium"` for label and code steps, which are UI text. */
+  /** Defaults to `"normal"`, or `"medium"` for label and micro steps, which are UI text. */
   fontWeight?: TypographyWeight;
   /** Defaults to `"sans"`, or `"mono"` for code steps. */
   fontFamily?: TypographyFontFamily;
@@ -59,8 +65,10 @@ export type TypographyProps = ComponentPropsWithRef<"span"> & {
   children: ReactNode;
 };
 
+/** Label and micro steps are UI text, and micro needs the extra weight to stay
+ *  legible at 9–11px. Everything else is prose. */
 const defaultWeightForSize = (size: TypographySize): TypographyWeight =>
-  size.startsWith("label") ? "medium" : "normal";
+  size.startsWith("label") || size.startsWith("micro") ? "medium" : "normal";
 
 const defaultFamilyForSize = (size: TypographySize): TypographyFontFamily =>
   size.startsWith("code") ? "mono" : "sans";

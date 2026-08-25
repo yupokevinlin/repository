@@ -21,6 +21,14 @@ export const displayFontSizes = [
   "display-sm",
 ] as const;
 
+/**
+ * Section and card headings — the tier between display and body.
+ *
+ * `title-sm` shares a font size with `body-lg` on purpose: they differ by line
+ * height and letter spacing, not size. A heading sits tighter than prose.
+ */
+export const titleFontSizes = ["title-lg", "title-md", "title-sm"] as const;
+
 /** Body text sizes */
 export const bodyFontSizes = [
   "body-lg",
@@ -32,19 +40,31 @@ export const bodyFontSizes = [
 /** Label / UI element sizes */
 export const labelFontSizes = ["label-lg", "label-md", "label-sm"] as const;
 
+/**
+ * Micro sizes — eyebrows, badge text, table meta, chart axis labels.
+ *
+ * Three genuinely distinct steps, never one step reused. Decorative and
+ * supporting text only: nothing a user has to read for long belongs here.
+ */
+export const microFontSizes = ["micro-lg", "micro-md", "micro-sm"] as const;
+
 /** Code / monospace sizes */
 export const codeFontSizes = ["code-lg", "code-sm"] as const;
 
 /** All custom font sizes combined — passed to tailwind-merge */
 export const allCustomFontSizes = [
   ...displayFontSizes,
+  ...titleFontSizes,
   ...bodyFontSizes,
   ...labelFontSizes,
+  ...microFontSizes,
   ...codeFontSizes,
 ] as const;
 
 export type DisplayFontSize = (typeof displayFontSizes)[number];
+export type TitleFontSize = (typeof titleFontSizes)[number];
 export type BodyFontSize = (typeof bodyFontSizes)[number];
 export type LabelFontSize = (typeof labelFontSizes)[number];
+export type MicroFontSize = (typeof microFontSizes)[number];
 export type CodeFontSize = (typeof codeFontSizes)[number];
 export type DesignFontSize = (typeof allCustomFontSizes)[number];

@@ -91,6 +91,27 @@ describe("Typography", () => {
     expect(slot(container).className).toContain("font-medium");
   });
 
+  it("gives micro-lg, micro-md and micro-sm three distinct sizes", () => {
+    const classNames: Array<string> = ["micro-lg", "micro-md", "micro-sm"].map(
+      (size) => {
+        const { container, unmount } = render(
+          <Typography size={size as "micro-lg"}>Free time</Typography>,
+        );
+        const className: string = slot(container).className;
+        unmount();
+        return className;
+      },
+    );
+    expect(new Set(classNames).size).toBe(3);
+  });
+
+  it("defaults micro steps to medium weight, to stay legible at 9-11px", () => {
+    const { container } = render(
+      <Typography size="micro-sm">Free time</Typography>,
+    );
+    expect(slot(container).className).toContain("font-medium");
+  });
+
   it("defaults code steps to the mono family", () => {
     const { container } = render(
       <Typography size="code-sm">MSKU 447188-2</Typography>,
