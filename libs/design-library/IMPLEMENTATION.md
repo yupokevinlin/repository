@@ -211,10 +211,10 @@ All need `Portal` (2.2) and `usePosition` (2.3).
 
 - [x] 4.1 `Tooltip` — opens on **focus** as well as hover; never interactive content
 - [x] 4.2 `Popover` — non-modal dialog semantics; Esc closes, focus returns
-- [ ] 4.3 `src/hooks/useListbox/` (internal) — the shared keyboard contract for
+- [x] 4.3 `src/hooks/useListbox/` (internal) — the shared keyboard contract for
       `Select` and `Combobox`: Down/Up, Alt+Down, Home/End, type-ahead,
       `aria-activedescendant`, and **DOM focus never entering the listbox**
-- [ ] 4.4 `Select` — _needs 4.3_. Custom trigger + portalled listbox, APG
+- [x] 4.4 `Select` — _needs 4.3_. Custom trigger + portalled listbox, APG
       select-only combobox. `role="combobox"` on the trigger, `role="listbox"` /
       `option` in the popup. **Never `role="menu"`** — a menu is for commands, a
       listbox chooses a value.

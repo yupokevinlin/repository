@@ -112,6 +112,15 @@ export {
   searchInputSizes,
 } from "./components/Inputs/SearchInput";
 export {
+  Select,
+  selectDensities,
+  type SelectDensity,
+  type SelectOption,
+  type SelectProps,
+  type SelectSize,
+  selectSizes,
+} from "./components/Inputs/Select";
+export {
   Switch,
   switchDensities,
   type SwitchDensity,

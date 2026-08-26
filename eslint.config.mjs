@@ -1,5 +1,6 @@
 // @ts-check
 import nx from "@nx/eslint-plugin";
+import jsxA11y from "eslint-plugin-jsx-a11y";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import tseslint from "typescript-eslint";
 
@@ -19,6 +20,18 @@ export default tseslint.config(
       "**/out-tsc/**",
       "**/storybook-static/**",
     ],
+  },
+
+  // ── jsx-a11y is registered here as well as in the design library's own
+  //    config. Not to enforce it workspace-wide — the rules stay off — but so
+  //    that eslint invoked from the repo root (which is what the pre-commit
+  //    hook does) can resolve rule names the library legitimately suppresses.
+  //    Without it, a disable comment for a rule this config has never heard of
+  //    is itself an error, and the hook rejects a commit that the project's
+  //    own lint target passes.
+  {
+    files: ["**/*.tsx", "**/*.jsx"],
+    plugins: { "jsx-a11y": jsxA11y },
   },
 
   // ── TypeScript — all TS/TSX files ────────────────────────────────────────
