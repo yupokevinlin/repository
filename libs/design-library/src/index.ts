@@ -26,6 +26,15 @@ export {
 
 // Components — Feedback
 export {
+  ProgressBar,
+  type ProgressBarProps,
+  progressBarSeverities,
+  type ProgressBarSeverity,
+  type ProgressBarSize,
+  progressBarSizes,
+  type ProgressBarThresholds,
+} from "./components/Feedback/ProgressBar";
+export {
   Skeleton,
   type SkeletonProps,
   type SkeletonVariant,

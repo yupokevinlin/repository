@@ -130,7 +130,7 @@ nothing. It becomes the second reference implementation alongside `Button`.
 - [x] 1.3 `Divider` — `role="separator"` when separating, `aria-hidden` when decorative
 - [x] 1.4 `Kbd` — no platform detection; the consumer passes the keys
 - [x] 1.5 `Skeleton` — `aria-hidden`, with `aria-busy` on the region it replaces
-- [ ] 1.6 `ProgressBar` — `role="progressbar"`, severity thresholds, indeterminate
+- [x] 1.6 `ProgressBar` — `role="progressbar"`, severity thresholds, indeterminate
 - [ ] 1.7 `Alert` — static, in-flow, **not** dismissible, **no** `role="alert"`
 - [ ] 1.8 `Card` — `<div>`, or `<button>` when `selectable` + `onClick`, which are
       required together at the type level. No `href`.
@@ -346,7 +346,7 @@ These are open at the project level. If an item runs into one, stop and ask.
 | Wave                         | Items | Done |
 | ---------------------------- | ----- | ---- |
 | 0 — foundations              | 7     | 7    |
-| 1 — independent primitives   | 14    | 5    |
+| 1 — independent primitives   | 14    | 6    |
 | 2 — shared internals         | 9     | 0    |
 | 3 — form controls            | 11    | 0    |
 | 4 — anchored overlays        | 14    | 0    |

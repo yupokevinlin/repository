@@ -213,6 +213,20 @@
   }
 }
 
+/* An indeterminate progress bar slides a short fill across the track. Not brand,
+   so it lives here with the other shared utilities rather than in a brand file. */
+@keyframes progress-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+@utility animate-progress-indeterminate {
+  animation: progress-indeterminate 1.4s ease-in-out infinite;
+}
+
 /* Stacking order for portalled overlays. The library does not use the browser
    top layer (no native <dialog>), so the order is explicit and must be shared.
    Higher wins; leave gaps so an app can slot something between. */

@@ -156,6 +156,7 @@ Size values are **Tailwind units as strings**. Never `sm` / `md` / `lg`.
 | Inline elements    | `"5"` `"6"`         | 20 / 24px      | Badge, Tag, Kbd                                                                                                                                     |
 | Selection controls | `"4"` `"5"`         | 16 / 20px      | Checkbox, Radio, Switch                                                                                                                             |
 | Avatars            | `"6"` `"8"` `"10"`  | 24 / 32 / 40px | Avatar, AvatarGroup                                                                                                                                 |
+| Bars and rules     | `"1"` `"2"`         | 4 / 8px        | ProgressBar                                                                                                                                         |
 | Spinners and icons | `"4"` `"5"` `"6"`   | 16 / 20 / 24px | LoadingSpinner; a sized control maps its own `size` onto this (see `Button.tsx`)                                                                    |
 
 Default is the middle value of the group (`"10"`, `"6"`, `"5"`, `"8"`).
