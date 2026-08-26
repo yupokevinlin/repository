@@ -19,6 +19,7 @@
   --color-bg-default: var(--color-bg-default);
   --color-bg-hover: var(--color-bg-hover);
   --color-bg-active: var(--color-bg-active);
+  --color-bg-inverse: var(--color-bg-inverse);
 
   --color-fg-default: var(--color-fg-default);
   --color-fg-muted: var(--color-fg-muted);

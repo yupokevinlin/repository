@@ -244,6 +244,7 @@ export {
 
 // Components — Overlays
 export { Portal, type PortalProps } from "./components/Overlays/Portal";
+export { Tooltip, type TooltipProps } from "./components/Overlays/Tooltip";
 
 // Components — Surfaces
 export {

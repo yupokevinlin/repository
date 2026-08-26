@@ -5,6 +5,10 @@
   --color-bg-default: var(--primitive-neutral-0);
   --color-bg-hover: var(--primitive-neutral-100);
   --color-bg-active: var(--primitive-neutral-200);
+  /* The surface that pairs with --color-fg-inverse: a dark chip on a
+     light page. Used by Tooltip, which must read as an overlay rather
+     than as more page. */
+  --color-bg-inverse: var(--primitive-neutral-900);
 
   --color-fg-default: var(--primitive-neutral-900);
   --color-fg-muted: var(--primitive-neutral-500);

@@ -5,6 +5,8 @@
   --color-bg-default: var(--primitive-neutral-900);
   --color-bg-hover: var(--primitive-neutral-800);
   --color-bg-active: var(--primitive-neutral-700);
+  /* Flipped, so a tooltip still stands off the page behind it. */
+  --color-bg-inverse: var(--primitive-neutral-0);
 
   --color-fg-default: var(--primitive-neutral-50);
   --color-fg-muted: var(--primitive-neutral-400);
