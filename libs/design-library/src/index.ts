@@ -309,6 +309,14 @@ export {
   type ContextMenuProps,
 } from "./components/Overlays/ContextMenu";
 export {
+  Drawer,
+  type DrawerProps,
+  type DrawerSide,
+  drawerSides,
+  type DrawerSize,
+  drawerSizes,
+} from "./components/Overlays/Drawer";
+export {
   DropdownMenu,
   type DropdownMenuProps,
 } from "./components/Overlays/DropdownMenu";

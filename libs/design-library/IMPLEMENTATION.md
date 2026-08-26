@@ -246,7 +246,7 @@ All need `Portal` (2.2), `useFocusTrap` (2.4) and `useScrollLock` (2.5). All are
 - [x] 5.2 `ConfirmModal` — _needs 5.1's internals_. Not a variant of `Modal`.
       Cannot be dismissed by overlay click; `requireReason` blocks confirm until
       text is entered. Also the step-up re-auth shell.
-- [ ] 5.3 `Drawer` — side sheet; the non-modal variant does not trap focus
+- [x] 5.3 `Drawer` — side sheet; the non-modal variant does not trap focus
 - [ ] 5.4 `CommandPalette` — _needs 4.3_. Combobox semantics inside a modal dialog.
       The library owns the keyboard contract; the app owns the search.
 - [ ] 5.5 `Toast` + `ToastProvider` + `useToast` — imperative, not controlled. The
