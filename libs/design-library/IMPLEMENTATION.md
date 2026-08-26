@@ -188,19 +188,19 @@ takes `label` / `hint` / `error` / `required` and renders its own `<label>`.
       axis off
 - [x] 3.2 `NumberInput` — `type="text"` + `inputMode="decimal"`, value always a
       string, separators on blur and raw on focus. Never `type="number"`.
-- [ ] 3.3 `Checkbox` — the atom. Indeterminate is a real `aria-checked="mixed"`.
-- [ ] 3.4 `Radio` — the atom; standalone, not only inside a group
-- [ ] 3.5 `Switch` — `role="switch"`, not a checkbox
-- [ ] 3.6 `Toggle` — `aria-pressed`, not `aria-checked`
-- [ ] 3.7 `SearchInput` — no internal debounce; `onChange` fires immediately
-- [ ] 3.8 `FileDropzone` — a real `<input type="file">` must be reachable; drag is
+- [x] 3.3 `Checkbox` — the atom. Indeterminate is a real `aria-checked="mixed"`.
+- [x] 3.4 `Radio` — the atom; standalone, not only inside a group
+- [x] 3.5 `Switch` — `role="switch"`, not a checkbox
+- [x] 3.6 `Toggle` — `aria-pressed`, not `aria-checked`
+- [x] 3.7 `SearchInput` — no internal debounce; `onChange` fires immediately
+- [x] 3.8 `FileDropzone` — a real `<input type="file">` must be reachable; drag is
       an enhancement, never the only route
 
 Then the group wrappers, each rendering `<fieldset>` + `<legend>`:
 
-- [ ] 3.9 `CheckboxGroup` — _needs 3.3_; `role="group"`, array value
-- [ ] 3.10 `RadioGroup` — _needs 3.4_; roving tabindex, arrows move **and** select
-- [ ] 3.11 `ToggleGroup` — _needs 3.6_; `role="radiogroup"` when `type="single"`,
+- [x] 3.9 `CheckboxGroup` — _needs 3.3_; `role="group"`, array value
+- [x] 3.10 `RadioGroup` — _needs 3.4_; roving tabindex, arrows move **and** select
+- [x] 3.11 `ToggleGroup` — _needs 3.6_; `role="radiogroup"` when `type="single"`,
       `role="toolbar"` when `type="multiple"`
 
 ---
@@ -349,7 +349,7 @@ These are open at the project level. If an item runs into one, stop and ask.
 | 0 — foundations              | 7     | 7    |
 | 1 — independent primitives   | 14    | 14   |
 | 2 — shared internals         | 9     | 9    |
-| 3 — form controls            | 11    | 0    |
+| 3 — form controls            | 11    | 11   |
 | 4 — anchored overlays        | 14    | 0    |
 | 5 — modal overlays           | 5     | 0    |
 | 6 — navigation and structure | 8     | 0    |
