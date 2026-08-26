@@ -128,6 +128,16 @@ describe("usePosition", () => {
       expect(floating().style.left).toBe("300px");
     });
 
+    it("follows the point when it moves — a cursor menu reopening elsewhere", () => {
+      const { rerender } = render(
+        <Harness open coordinates={{ x: 300, y: 200 }} />,
+      );
+      expect(floating().style.left).toBe("300px");
+
+      rerender(<Harness open coordinates={{ x: 500, y: 400 }} />);
+      expect(floating().style.left).toBe("500px");
+    });
+
     it("still flips near the bottom edge", () => {
       render(<Harness open coordinates={{ x: 300, y: 750 }} />);
       expect(floating().dataset.placement).toBe("top");

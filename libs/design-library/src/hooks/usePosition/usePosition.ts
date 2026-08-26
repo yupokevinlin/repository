@@ -203,7 +203,19 @@ export const usePosition = <
       window.removeEventListener("resize", update);
       observer?.disconnect();
     };
-  }, [open, update, placement, alignment, offset, matchTriggerWidth]);
+    // coordinates is spread into x and y rather than passed whole: it is an
+    // object literal at every call site, so depending on it directly would
+    // tear the listeners down and rebuild them on every render.
+  }, [
+    open,
+    update,
+    placement,
+    alignment,
+    offset,
+    matchTriggerWidth,
+    coordinates?.x,
+    coordinates?.y,
+  ]);
 
   return { anchorRef, floatingRef, update };
 };

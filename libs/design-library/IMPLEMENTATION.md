@@ -219,9 +219,9 @@ All need `Portal` (2.2) and `usePosition` (2.3).
       `option` in the popup. **Never `role="menu"`** — a menu is for commands, a
       listbox chooses a value.
 - [x] 4.5 `Combobox` — _needs 4.3_. `Select` plus a text input and filtering.
-- [ ] 4.6 `MenuItem` / `MenuGroup` / `MenuSeparator` — the shared menu children
-- [ ] 4.7 `DropdownMenu` — _needs 4.6_. `role="menu"`, arrows, type-ahead, Esc.
-- [ ] 4.8 `ContextMenu` — _needs 4.6_. Same items, opened at cursor coordinates.
+- [x] 4.6 `MenuItem` / `MenuGroup` / `MenuSeparator` — the shared menu children
+- [x] 4.7 `DropdownMenu` — _needs 4.6_. `role="menu"`, arrows, type-ahead, Esc.
+- [x] 4.8 `ContextMenu` — _needs 4.6_. Same items, opened at cursor coordinates.
 - [ ] 4.9 `HoverCard` — must open on focus and dismiss on Esc. If it cannot be
       reached by keyboard it is a `Popover`, not a `HoverCard`.
 - [ ] 4.10 `Calendar` — native `Date` at local midnight; `Intl` for month and
