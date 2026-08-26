@@ -30,6 +30,14 @@ export {
   type LinkProps,
 } from "./components/Buttons/Link";
 
+// Components — Forms
+export {
+  Label,
+  labelDensities,
+  type LabelDensity,
+  type LabelProps,
+} from "./components/Forms/Label";
+
 // Components — Inputs
 export {
   TextInput,
