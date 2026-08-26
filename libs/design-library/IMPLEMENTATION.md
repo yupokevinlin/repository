@@ -97,11 +97,11 @@ depends on the whole wave being done.** Do these strictly in order.
       exist here, so both are bound to this repo's `fontSizes.ts` instead.
 
       §11 gained a carve-out (§11.0): both take `as` as a **closed union** —
-      `Typography` is `"span" | "p" | "div"` defaulting to `"span"`, `Heading`
-      is `"h1"…"h6"` defaulting to `"h2"`. Not `ElementType`, so none of the
-      typing or semantic escapes §11 prevents are reachable. Level and size stay
-      independent props. The generics in the sibling implementation were
-      dropped; each union's members share one prop surface.
+          `Typography` is `"span" | "p" | "div"` defaulting to `"span"`, `Heading`
+          is `"h1"…"h6"` defaulting to `"h2"`. Not `ElementType`, so none of the
+          typing or semantic escapes §11 prevents are reachable. Level and size stay
+          independent props. The generics in the sibling implementation were
+          dropped; each union's members share one prop surface.
 
 - [x] **0.7 Backfill the three existing components.** Add `Button.spec.tsx`,
       `TextInput.spec.tsx` and `LoadingSpinner.spec.tsx` to the §18 standard, and
@@ -329,6 +329,31 @@ Plus, by eye in Storybook: the gallery in **light and dark**, every variant × s
 × state cell populated, and keyboard-only operation of the whole component. §15
 lists the keyboard contract to check against — an `aria-expanded` that never
 changes passes an attribute assertion and still fails a user.
+
+---
+
+## Known defect — the muted foreground fails WCAG AA
+
+Storybook's a11y addon, which now runs as part of the visual-regression suite,
+reports a colour-contrast violation on every component that uses
+`text-fg-muted`: helper text, descriptions, timestamps, placeholders, secondary
+lines. Both brands hit it, because both map the token the same way.
+
+```css
+--color-fg-muted: var(--primitive-neutral-500); /* oklch(58% 0.009 250) */
+```
+
+That is **#767b80 on white — 4.27:1**, against the 4.5:1 AA floor for normal
+text. `--primitive-neutral-600` (47%) clears it comfortably.
+
+Not fixed here, deliberately: it is a brand-layer token, so changing it darkens
+every secondary string in both products, and that is a design decision rather
+than a bug fix. The a11y check is left at warn level for the same reason —
+turning it to `error` today would leave the visual suite red on a finding
+nobody has ruled on yet.
+
+`--color-fg-subtle` (neutral-400) is lighter still and worth looking at in the
+same pass.
 
 ---
 
