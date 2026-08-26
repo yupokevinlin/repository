@@ -67,6 +67,12 @@ export {
   badgeSizes,
 } from "./components/DataDisplay/Badge";
 export {
+  Kbd,
+  type KbdProps,
+  type KbdSize,
+  kbdSizes,
+} from "./components/DataDisplay/Kbd";
+export {
   Tag,
   type TagAppearance,
   tagAppearances,
