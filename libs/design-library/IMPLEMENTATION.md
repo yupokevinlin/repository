@@ -183,7 +183,7 @@ code usually goes wrong, and everything downstream inherits their bugs.
 All need `FieldShell` (2.9) and most need `useControllableState` (2.1). Each one
 takes `label` / `hint` / `error` / `required` and renders its own `<label>`.
 
-- [ ] 3.1 `TextArea` — `resize` (`none`/`horizontal`/`vertical`/`both`, default
+- [x] 3.1 `TextArea` — `resize` (`none`/`horizontal`/`vertical`/`both`, default
       `vertical`) and `autoResize`; when `autoResize` is on it forces the vertical
       axis off
 - [ ] 3.2 `NumberInput` — `type="text"` + `inputMode="decimal"`, value always a

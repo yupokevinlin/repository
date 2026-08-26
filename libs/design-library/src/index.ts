@@ -56,6 +56,14 @@ export {
 
 // Components — Inputs
 export {
+  TextArea,
+  textAreaDensities,
+  type TextAreaDensity,
+  type TextAreaProps,
+  type TextAreaResize,
+  textAreaResizes,
+} from "./components/Inputs/TextArea";
+export {
   TextInput,
   textInputDensities,
   type TextInputDensity,
