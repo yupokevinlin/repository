@@ -95,6 +95,10 @@ export {
   initialsFromName,
 } from "./components/DataDisplay/Avatar";
 export {
+  AvatarGroup,
+  type AvatarGroupProps,
+} from "./components/DataDisplay/AvatarGroup";
+export {
   Badge,
   type BadgeAppearance,
   badgeAppearances,
