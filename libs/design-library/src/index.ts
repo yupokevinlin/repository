@@ -26,6 +26,12 @@ export {
 
 // Components — Feedback
 export {
+  Skeleton,
+  type SkeletonProps,
+  type SkeletonVariant,
+  skeletonVariants,
+} from "./components/Feedback/Skeleton";
+export {
   LoadingSpinner,
   type LoadingSpinnerProps,
   type LoadingSpinnerSize,
