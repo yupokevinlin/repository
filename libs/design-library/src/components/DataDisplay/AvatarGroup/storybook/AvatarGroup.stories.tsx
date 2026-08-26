@@ -109,7 +109,9 @@ Example.argTypes = {
     description:
       "What the +N bubble means, in words. A function rather than a string so the count can sit wherever the language needs it.",
     table: {
-      defaultValue: { summary: "(count) => `${count} more`" },
+      defaultValue: {
+        summary: "(count) => `${count} more`",
+      },
     },
   },
 };

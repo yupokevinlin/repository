@@ -14,6 +14,10 @@ export {
   buttonVariants,
 } from "./components/Buttons/Button";
 export {
+  IconButton,
+  type IconButtonProps,
+} from "./components/Buttons/IconButton";
+export {
   Link,
   type LinkAppearance,
   linkAppearances,
