@@ -32,6 +32,14 @@ export {
 
 // Components — Forms
 export {
+  HelperText,
+  helperTextDensities,
+  type HelperTextDensity,
+  type HelperTextProps,
+  helperTextSeverities,
+  type HelperTextSeverity,
+} from "./components/Forms/HelperText";
+export {
   Label,
   labelDensities,
   type LabelDensity,
