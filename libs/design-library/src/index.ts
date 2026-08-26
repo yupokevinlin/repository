@@ -125,6 +125,10 @@ export {
   type CardSeverity,
 } from "./components/Surfaces/Card";
 export {
+  Collapsible,
+  type CollapsibleProps,
+} from "./components/Surfaces/Collapsible";
+export {
   Divider,
   dividerEmphases,
   type DividerEmphasis,

@@ -136,8 +136,8 @@ nothing. It becomes the second reference implementation alongside `Button`.
       required together at the type level. No `href`.
 - [x] 1.9 `Avatar` — initials fallback; `status` uses presence tokens and its
       meaning is in the accessible name, never the dot alone
-- [ ] 1.10 `Collapsible` — the disclosure primitive; `Accordion` and `Sidebar`
-      both build on it
+- [x] 1.10 `Collapsible` — the disclosure primitive; `Accordion` and `Sidebar`
+      both build on it. Brought `useControllableState` in with it (§2.1).
 - [ ] 1.11 `Link` — `<a>` only, plus `appearance="button"` sharing `Button`'s cva
 
 Then, each depending on one of the above:
@@ -153,9 +153,10 @@ Then, each depending on one of the above:
 These are not all components, but everything after this wave depends on them.
 See §2.1 of `AGENTS.md` for the contract on each.
 
-- [ ] 2.1 `src/hooks/useControllableState/` — controlled when the prop is defined,
+- [x] 2.1 `src/hooks/useControllableState/` — controlled when the prop is defined,
       uncontrolled otherwise. Used by ~22 components; without it that logic gets
-      written 22 times.
+      written 22 times. _Pulled forward — `Collapsible` (1.10) was the first
+      stateful component and needed it._
 - [ ] 2.2 `Overlays/Portal/` — renders into `document.body`, SSR-safe. Explicit
       §2 exception: no styles file, no gallery. Still ships a spec and a barrel.
 - [ ] 2.3 `src/hooks/usePosition/` — anchor, flip on the main axis, match trigger
@@ -346,8 +347,8 @@ These are open at the project level. If an item runs into one, stop and ask.
 | Wave                         | Items | Done |
 | ---------------------------- | ----- | ---- |
 | 0 — foundations              | 7     | 7    |
-| 1 — independent primitives   | 14    | 9    |
-| 2 — shared internals         | 9     | 0    |
+| 1 — independent primitives   | 14    | 10   |
+| 2 — shared internals         | 9     | 1    |
 | 3 — form controls            | 11    | 0    |
 | 4 — anchored overlays        | 14    | 0    |
 | 5 — modal overlays           | 5     | 0    |
