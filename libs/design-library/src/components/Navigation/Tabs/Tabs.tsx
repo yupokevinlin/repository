@@ -199,13 +199,19 @@ export const Tabs = ({
               </span>
             )}
             <span data-slot="tab-label">{tab.props.label}</span>
+            {/* A real space, not just the flex gap: the gap separates the two
+                visually but leaves the accessible name as "Line items4" in
+                any name computation that concatenates text nodes directly. */}
             {tab.props.count !== undefined && (
-              <span
-                data-slot="tab-count"
-                className={TabsStyles.countStyle({ selected })}
-              >
-                {tab.props.count}
-              </span>
+              <>
+                {" "}
+                <span
+                  data-slot="tab-count"
+                  className={TabsStyles.countStyle({ selected })}
+                >
+                  {tab.props.count}
+                </span>
+              </>
             )}
           </button>
         );
