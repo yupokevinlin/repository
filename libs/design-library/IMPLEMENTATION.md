@@ -134,7 +134,7 @@ nothing. It becomes the second reference implementation alongside `Button`.
 - [x] 1.7 `Alert` — static, in-flow, **not** dismissible, **no** `role="alert"`
 - [x] 1.8 `Card` — `<div>`, or `<button>` when `selectable` + `onClick`, which are
       required together at the type level. No `href`.
-- [ ] 1.9 `Avatar` — initials fallback; `status` uses presence tokens and its
+- [x] 1.9 `Avatar` — initials fallback; `status` uses presence tokens and its
       meaning is in the accessible name, never the dot alone
 - [ ] 1.10 `Collapsible` — the disclosure primitive; `Accordion` and `Sidebar`
       both build on it
@@ -346,7 +346,7 @@ These are open at the project level. If an item runs into one, stop and ask.
 | Wave                         | Items | Done |
 | ---------------------------- | ----- | ---- |
 | 0 — foundations              | 7     | 7    |
-| 1 — independent primitives   | 14    | 8    |
+| 1 — independent primitives   | 14    | 9    |
 | 2 — shared internals         | 9     | 0    |
 | 3 — form controls            | 11    | 0    |
 | 4 — anchored overlays        | 14    | 0    |

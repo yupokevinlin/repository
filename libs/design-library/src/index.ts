@@ -78,6 +78,17 @@ export {
 
 // Components — DataDisplay
 export {
+  Avatar,
+  type AvatarProps,
+  type AvatarShape,
+  avatarShapes,
+  type AvatarSize,
+  avatarSizes,
+  type AvatarStatus,
+  avatarStatuses,
+  initialsFromName,
+} from "./components/DataDisplay/Avatar";
+export {
   Badge,
   type BadgeAppearance,
   badgeAppearances,
