@@ -47,8 +47,22 @@ const BRAND = new Set([
   "src/css/elevation.css",
 ]);
 
-/** Build output and installed packages — not source, never copied. */
-const IGNORED_DIRS = new Set(["node_modules", "dist", "out-tsc", ".nx"]);
+/**
+ * Never walked, so never copied and never reported as an orphan.
+ *
+ * `visual` is in here for the same reason the brand CSS is excluded: a
+ * baseline is a photograph of a themed component, so the same story is
+ * legitimately a different picture in each repo. Copying them across would
+ * fail every screenshot in the target on the first run.
+ */
+const IGNORED_DIRS = new Set([
+  "node_modules",
+  "dist",
+  "out-tsc",
+  ".nx",
+  "visual",
+  "storybook-static",
+]);
 
 const toPosix = (value) => value.split("\\").join("/");
 

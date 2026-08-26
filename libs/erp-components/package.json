@@ -31,6 +31,16 @@
         "options": {
           "port": 5001
         }
+      },
+      "test-storybook": {
+        "dependsOn": [
+          "build-storybook"
+        ],
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "libs/erp-components",
+          "command": "node ../../tools/visual-test.mjs"
+        }
       }
     }
   },

@@ -52,3 +52,5 @@ storybook-static
 vite.config.*.timestamp*
 
 .playwright-mcp/
+# Visual-regression output. Baselines are committed; diffs are per-run noise.
+libs/*/visual/diffs/
