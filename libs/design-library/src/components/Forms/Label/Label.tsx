@@ -95,7 +95,7 @@ export const Label = ({
             aria-hidden="true"
           >
             {"*"}
-          </span>
+          </span>{" "}
           <span data-slot="label-required-text" className="sr-only">
             {requiredLabel}
           </span>

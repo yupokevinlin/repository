@@ -120,7 +120,7 @@ export const Fieldset = ({
               aria-hidden="true"
             >
               {"*"}
-            </span>
+            </span>{" "}
             <span data-slot="fieldset-required-text" className="sr-only">
               {requiredLabel}
             </span>
