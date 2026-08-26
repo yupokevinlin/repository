@@ -268,7 +268,7 @@ All need `Portal` (2.2), `useFocusTrap` (2.4) and `useScrollLock` (2.5). All are
       in as children; full-row click uses the stretched-link pattern (§11.2).
       **Read shadcn's `Sidebar` first** — collapse, mobile behaviour, persistence
       and groups are all solved there and it maps almost exactly onto our shape.
-- [ ] 6.4 `Breadcrumbs` + `Breadcrumb` — _needs 2.2, 2.3_. `<nav>` → `<ol>`, last
+- [x] 6.4 `Breadcrumbs` + `Breadcrumb` — _needs 2.2, 2.3_. `<nav>` → `<ol>`, last
       crumb `aria-current="page"`. Collapses to "…" which opens a portalled
       **disclosure list of links** — not a `role="menu"`, because these are
       navigation, not commands.

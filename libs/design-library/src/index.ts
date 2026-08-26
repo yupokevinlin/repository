@@ -404,6 +404,16 @@ export {
 
 // Components — Navigation
 export {
+  Breadcrumbs,
+  breadcrumbsDensities,
+  type BreadcrumbsDensity,
+  type BreadcrumbsProps,
+} from "./components/Navigation/Breadcrumbs";
+export {
+  Breadcrumb,
+  type BreadcrumbProps,
+} from "./components/Navigation/Breadcrumbs/Breadcrumb/Breadcrumb";
+export {
   Sidebar,
   sidebarDensities,
   type SidebarDensity,
