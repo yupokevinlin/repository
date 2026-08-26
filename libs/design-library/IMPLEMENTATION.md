@@ -272,7 +272,7 @@ All need `Portal` (2.2), `useFocusTrap` (2.4) and `useScrollLock` (2.5). All are
       crumb `aria-current="page"`. Collapses to "…" which opens a portalled
       **disclosure list of links** — not a `role="menu"`, because these are
       navigation, not commands.
-- [ ] 6.5 `Pagination` — controlled-only; links not buttons, so middle-click works
+- [x] 6.5 `Pagination` — controlled-only; links not buttons, so middle-click works
 - [ ] 6.6 `Resizable` + `ResizablePanel` + `ResizableHandle` — APG **Window
       Splitter**: `role="separator"`, `aria-valuenow` / `valuemin` / `valuemax`,
       `aria-controls`, arrows resize, Enter toggles collapse

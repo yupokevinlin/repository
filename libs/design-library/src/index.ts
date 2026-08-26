@@ -414,6 +414,14 @@ export {
   type BreadcrumbProps,
 } from "./components/Navigation/Breadcrumbs/Breadcrumb/Breadcrumb";
 export {
+  ellipsis,
+  Pagination,
+  type PaginationEntry,
+  type PaginationProps,
+  paginationRange,
+  type PaginationRangeArgs,
+} from "./components/Navigation/Pagination";
+export {
   Sidebar,
   sidebarDensities,
   type SidebarDensity,
