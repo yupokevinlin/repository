@@ -13,6 +13,12 @@ export {
   type ButtonVariant,
   buttonVariants,
 } from "./components/Buttons/Button";
+export {
+  Link,
+  type LinkAppearance,
+  linkAppearances,
+  type LinkProps,
+} from "./components/Buttons/Link";
 
 // Components — Inputs
 export {
