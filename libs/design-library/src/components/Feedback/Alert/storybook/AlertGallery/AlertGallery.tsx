@@ -79,9 +79,7 @@ const forms: Array<{
 ];
 
 export const AlertGallery = () => {
-  // The gallery cell centres text, which suits a Badge but misrepresents a
-  // block-level component. An alert is never centred.
-  const cellWidth = "min-w-[22rem] text-left";
+  const cellWidth = "min-w-[22rem]";
   const labelCell =
     "bg-bg-hover text-fg-default text-[1rem] font-bold text-center whitespace-nowrap min-w-[10rem]";
 
@@ -107,7 +105,11 @@ export const AlertGallery = () => {
                 {label}
               </StorybookGalleryTableCell>
               {alertSeverities.map((severity) => (
-                <StorybookGalleryTableCell key={severity} className={cellWidth}>
+                <StorybookGalleryTableCell
+                  key={severity}
+                  align="left"
+                  className={cellWidth}
+                >
                   {render(severity)}
                 </StorybookGalleryTableCell>
               ))}
