@@ -162,7 +162,7 @@ See §2.1 of `AGENTS.md` for the contract on each.
 - [x] 2.3 `src/hooks/usePosition/` — anchor, flip on the main axis, match trigger
       width, accept fixed coordinates for a cursor menu. Deliberately does **not**
       do shift-to-fit, arrow positioning or nested scroll containers.
-- [ ] 2.4 `src/hooks/useFocusTrap/` — trap Tab, restore focus to the trigger
+- [x] 2.4 `src/hooks/useFocusTrap/` — trap Tab, restore focus to the trigger
 - [ ] 2.5 `src/hooks/useScrollLock/` — body scroll lock while a modal is open
 - [ ] 2.6 `Forms/Label/`
 - [ ] 2.7 `Forms/HelperText/` — severity-styled hint and error text
@@ -348,7 +348,7 @@ These are open at the project level. If an item runs into one, stop and ask.
 | ---------------------------- | ----- | ---- |
 | 0 — foundations              | 7     | 7    |
 | 1 — independent primitives   | 14    | 14   |
-| 2 — shared internals         | 9     | 3    |
+| 2 — shared internals         | 9     | 4    |
 | 3 — form controls            | 11    | 0    |
 | 4 — anchored overlays        | 14    | 0    |
 | 5 — modal overlays           | 5     | 0    |
