@@ -26,6 +26,12 @@ export {
 
 // Components — Feedback
 export {
+  Alert,
+  type AlertProps,
+  alertSeverities,
+  type AlertSeverity,
+} from "./components/Feedback/Alert";
+export {
   ProgressBar,
   type ProgressBarProps,
   progressBarSeverities,
