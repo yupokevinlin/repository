@@ -123,7 +123,7 @@ the first few prove the whole pipeline end to end.
 `data-slot`, a gallery matrix, `@example` blocks and a spec file, and depends on
 nothing. It becomes the second reference implementation alongside `Button`.
 
-- [ ] 1.1 `Badge` — severity × appearance × size, plus `dot` and `max`. Absorbs
+- [x] 1.1 `Badge` — severity × appearance × size, plus `dot` and `max`. Absorbs
       what earlier drafts called `StatusChip`.
 - [ ] 1.2 `Tag` — removable; the remove affordance is a real `<button>` with an
       `aria-label` naming what it removes
@@ -346,7 +346,7 @@ These are open at the project level. If an item runs into one, stop and ask.
 | Wave                         | Items | Done |
 | ---------------------------- | ----- | ---- |
 | 0 — foundations              | 7     | 7    |
-| 1 — independent primitives   | 14    | 0    |
+| 1 — independent primitives   | 14    | 1    |
 | 2 — shared internals         | 9     | 0    |
 | 3 — form controls            | 11    | 0    |
 | 4 — anchored overlays        | 14    | 0    |

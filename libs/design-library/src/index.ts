@@ -54,3 +54,15 @@ export {
   type TypographyWeight,
   typographyWeights,
 } from "./components/Typography";
+
+// Components — DataDisplay
+export {
+  Badge,
+  type BadgeAppearance,
+  badgeAppearances,
+  type BadgeProps,
+  badgeSeverities,
+  type BadgeSeverity,
+  type BadgeSize,
+  badgeSizes,
+} from "./components/DataDisplay/Badge";

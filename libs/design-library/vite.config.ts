@@ -1,10 +1,22 @@
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
-import react from "@vitejs/plugin-react";
 import { defineConfig } from "vitest/config";
 
+/**
+ * Vitest only. Storybook's react-vite framework merges this file into its own
+ * config, so **do not add @vitejs/plugin-react here** — `.storybook/main.ts`
+ * already supplies it, and two copies inject the Fast Refresh runtime twice:
+ *
+ *   SyntaxError: Identifier 'RefreshRuntime' has already been declared
+ *
+ * That breaks the Storybook dev server only. `build-storybook` does not inject
+ * the refresh runtime, so it passes either way — the failure is invisible to
+ * every check except opening the browser.
+ *
+ * Vitest transforms JSX through esbuild and does not need the plugin.
+ */
 export default defineConfig({
   root: __dirname,
-  plugins: [react(), nxViteTsPaths()],
+  plugins: [nxViteTsPaths()],
   test: {
     name: "design-library",
     environment: "jsdom",
