@@ -247,7 +247,7 @@ All need `Portal` (2.2), `useFocusTrap` (2.4) and `useScrollLock` (2.5). All are
       Cannot be dismissed by overlay click; `requireReason` blocks confirm until
       text is entered. Also the step-up re-auth shell.
 - [x] 5.3 `Drawer` — side sheet; the non-modal variant does not trap focus
-- [ ] 5.4 `CommandPalette` — _needs 4.3_. Combobox semantics inside a modal dialog.
+- [x] 5.4 `CommandPalette` — _needs 4.3_. Combobox semantics inside a modal dialog.
       The library owns the keyboard contract; the app owns the search.
 - [ ] 5.5 `Toast` + `ToastProvider` + `useToast` — imperative, not controlled. The
       **only** provider permitted in this package. `role="status"` / `aria-live`

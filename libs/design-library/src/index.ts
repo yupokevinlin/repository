@@ -299,6 +299,11 @@ export {
 // Components — Overlays
 export { Calendar, type CalendarProps } from "./components/Overlays/Calendar";
 export {
+  CommandPalette,
+  type CommandPaletteItem,
+  type CommandPaletteProps,
+} from "./components/Overlays/CommandPalette";
+export {
   ConfirmModal,
   type ConfirmModalProps,
   confirmSeverities,
