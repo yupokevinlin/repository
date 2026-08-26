@@ -299,6 +299,12 @@ export {
 // Components — Overlays
 export { Calendar, type CalendarProps } from "./components/Overlays/Calendar";
 export {
+  ConfirmModal,
+  type ConfirmModalProps,
+  confirmSeverities,
+  type ConfirmSeverity,
+} from "./components/Overlays/ConfirmModal";
+export {
   ContextMenu,
   type ContextMenuProps,
 } from "./components/Overlays/ContextMenu";
@@ -324,6 +330,12 @@ export {
   MenuSeparator,
   type MenuSeparatorProps,
 } from "./components/Overlays/Menu/MenuSeparator";
+export {
+  Modal,
+  type ModalProps,
+  type ModalSize,
+  modalSizes,
+} from "./components/Overlays/Modal";
 export {
   Popover,
   type PopoverPadding,

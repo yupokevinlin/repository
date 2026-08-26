@@ -242,8 +242,8 @@ All need `Portal` (2.2) and `usePosition` (2.3).
 All need `Portal` (2.2), `useFocusTrap` (2.4) and `useScrollLock` (2.5). All are
 **controlled-only** — no `defaultOpen`.
 
-- [ ] 5.1 `Modal` — `aria-modal`, labelled by its heading, Esc closes, focus returns
-- [ ] 5.2 `ConfirmModal` — _needs 5.1's internals_. Not a variant of `Modal`.
+- [x] 5.1 `Modal` — `aria-modal`, labelled by its heading, Esc closes, focus returns
+- [x] 5.2 `ConfirmModal` — _needs 5.1's internals_. Not a variant of `Modal`.
       Cannot be dismissed by overlay click; `requireReason` blocks confirm until
       text is entered. Also the step-up re-auth shell.
 - [ ] 5.3 `Drawer` — side sheet; the non-modal variant does not trap focus
