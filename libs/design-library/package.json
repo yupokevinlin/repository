@@ -9,6 +9,7 @@
       "import": "./src/index.ts",
       "default": "./src/index.ts"
     },
+    "./tailwind.css": "./src/css/tailwind/tailwind.css",
     "./package.json": "./package.json"
   },
   "peerDependencies": {
@@ -35,6 +36,6 @@
     }
   },
   "dependencies": {
-    "@storybook/addon-docs": "^10.4.6"
+    "@storybook/addon-docs": "^10.5.4"
   }
 }
