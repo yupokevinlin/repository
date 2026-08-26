@@ -210,7 +210,7 @@ Then the group wrappers, each rendering `<fieldset>` + `<legend>`:
 All need `Portal` (2.2) and `usePosition` (2.3).
 
 - [x] 4.1 `Tooltip` — opens on **focus** as well as hover; never interactive content
-- [ ] 4.2 `Popover` — non-modal dialog semantics; Esc closes, focus returns
+- [x] 4.2 `Popover` — non-modal dialog semantics; Esc closes, focus returns
 - [ ] 4.3 `src/hooks/useListbox/` (internal) — the shared keyboard contract for
       `Select` and `Combobox`: Down/Up, Alt+Down, Home/End, type-ahead,
       `aria-activedescendant`, and **DOM focus never entering the listbox**

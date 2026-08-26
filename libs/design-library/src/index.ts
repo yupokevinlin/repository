@@ -243,6 +243,12 @@ export {
 } from "./components/DataDisplay/Tag";
 
 // Components — Overlays
+export {
+  Popover,
+  type PopoverPadding,
+  popoverPaddings,
+  type PopoverProps,
+} from "./components/Overlays/Popover";
 export { Portal, type PortalProps } from "./components/Overlays/Portal";
 export { Tooltip, type TooltipProps } from "./components/Overlays/Tooltip";
 
