@@ -263,7 +263,7 @@ All need `Portal` (2.2), `useFocusTrap` (2.4) and `useScrollLock` (2.5). All are
       mounts. `aria-controls` is set only on the selected tab.
 - [x] 6.2 `Accordion` — _needs 1.10_. Header is a `<button>` inside a heading
       element. Takes a `headingLevel` prop — there is no `as`.
-- [ ] 6.3 `Sidebar` + `SidebarGroup` + `SidebarItem` — _needs 1.10_.
+- [x] 6.3 `Sidebar` + `SidebarGroup` + `SidebarItem` — _needs 1.10_.
       `<nav aria-label>` landmark, current item `aria-current="page"`. Links come
       in as children; full-row click uses the stretched-link pattern (§11.2).
       **Read shadcn's `Sidebar` first** — collapse, mobile behaviour, persistence

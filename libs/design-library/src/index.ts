@@ -404,6 +404,20 @@ export {
 
 // Components — Navigation
 export {
+  Sidebar,
+  sidebarDensities,
+  type SidebarDensity,
+  type SidebarProps,
+} from "./components/Navigation/Sidebar";
+export {
+  SidebarGroup,
+  type SidebarGroupProps,
+} from "./components/Navigation/Sidebar/SidebarGroup/SidebarGroup";
+export {
+  SidebarItem,
+  type SidebarItemProps,
+} from "./components/Navigation/Sidebar/SidebarItem/SidebarItem";
+export {
   Tabs,
   type TabsOrientation,
   tabsOrientations,
