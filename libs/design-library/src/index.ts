@@ -66,3 +66,11 @@ export {
   type BadgeSize,
   badgeSizes,
 } from "./components/DataDisplay/Badge";
+export {
+  Tag,
+  type TagAppearance,
+  tagAppearances,
+  type TagProps,
+  type TagSize,
+  tagSizes,
+} from "./components/DataDisplay/Tag";

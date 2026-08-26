@@ -125,7 +125,7 @@ nothing. It becomes the second reference implementation alongside `Button`.
 
 - [x] 1.1 `Badge` — severity × appearance × size, plus `dot` and `max`. Absorbs
       what earlier drafts called `StatusChip`.
-- [ ] 1.2 `Tag` — removable; the remove affordance is a real `<button>` with an
+- [x] 1.2 `Tag` — removable; the remove affordance is a real `<button>` with an
       `aria-label` naming what it removes
 - [ ] 1.3 `Divider` — `role="separator"` when separating, `aria-hidden` when decorative
 - [ ] 1.4 `Kbd` — no platform detection; the consumer passes the keys
@@ -346,7 +346,7 @@ These are open at the project level. If an item runs into one, stop and ask.
 | Wave                         | Items | Done |
 | ---------------------------- | ----- | ---- |
 | 0 — foundations              | 7     | 7    |
-| 1 — independent primitives   | 14    | 1    |
+| 1 — independent primitives   | 14    | 2    |
 | 2 — shared internals         | 9     | 0    |
 | 3 — form controls            | 11    | 0    |
 | 4 — anchored overlays        | 14    | 0    |

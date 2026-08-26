@@ -870,6 +870,12 @@ Name.spec.tsx
 - Ref forwarding where the element accepts one
 - Controlled and uncontrolled both work (§10)
 
+**Keyboard behaviour is proven in the spec, never in the gallery.**
+`StorybookGalleryTable` renders with `inert`, so nothing inside a gallery can
+take focus — that keeps a matrix of forty controls out of the docs page tab
+order. The gallery proves appearance; the spec proves behaviour. The
+interactive `Example` story is the only place both are live at once.
+
 Select on `data-slot` and accessible roles. jsdom does not run the Tailwind
 pipeline, so assertions are on class strings and DOM structure — visual proof
 belongs to the gallery.
