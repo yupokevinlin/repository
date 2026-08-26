@@ -273,7 +273,11 @@ export const Select = ({
                 onPointerEnter={() => {
                   listbox.setActiveIndex(index);
                 }}
-                onClick={() => {
+                // Pointerdown rather than click, matching Combobox: it
+                // fires before focus moves, so the choice lands before any
+                // blur handling runs.
+                onPointerDown={(event) => {
+                  event.preventDefault();
                   listbox.select(index);
                   triggerRef.current?.focus();
                 }}

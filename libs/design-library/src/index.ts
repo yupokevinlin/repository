@@ -73,6 +73,15 @@ export {
   type CheckboxGroupProps,
 } from "./components/Inputs/CheckboxGroup";
 export {
+  Combobox,
+  comboboxDensities,
+  type ComboboxDensity,
+  type ComboboxOption,
+  type ComboboxProps,
+  type ComboboxSize,
+  comboboxSizes,
+} from "./components/Inputs/Combobox";
+export {
   FileDropzone,
   fileDropzoneDensities,
   type FileDropzoneDensity,

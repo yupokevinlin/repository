@@ -41,14 +41,18 @@ const Harness = ({
     <>
       <button
         data-testid="trigger"
+        // The same explicit role Select carries: without it the rule checks the
+        // implicit button role, which does not support aria-activedescendant.
+        role="combobox"
         aria-expanded={open}
+        aria-controls={open ? "harness-list" : undefined}
         aria-activedescendant={listbox.activeId}
         onKeyDown={listbox.onKeyDown}
       >
         {value === "" ? "Choose" : value}
       </button>
       {open && (
-        <ul role="listbox" data-testid="list">
+        <ul id="harness-list" role="listbox" data-testid="list">
           {listOptions.map((option: ListboxOption, index: number) => (
             <li
               key={option.value}

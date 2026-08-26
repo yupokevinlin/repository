@@ -218,7 +218,7 @@ All need `Portal` (2.2) and `usePosition` (2.3).
       select-only combobox. `role="combobox"` on the trigger, `role="listbox"` /
       `option` in the popup. **Never `role="menu"`** — a menu is for commands, a
       listbox chooses a value.
-- [ ] 4.5 `Combobox` — _needs 4.3_. `Select` plus a text input and filtering.
+- [x] 4.5 `Combobox` — _needs 4.3_. `Select` plus a text input and filtering.
 - [ ] 4.6 `MenuItem` / `MenuGroup` / `MenuSeparator` — the shared menu children
 - [ ] 4.7 `DropdownMenu` — _needs 4.6_. `role="menu"`, arrows, type-ahead, Esc.
 - [ ] 4.8 `ContextMenu` — _needs 4.6_. Same items, opened at cursor coordinates.
