@@ -261,7 +261,7 @@ All need `Portal` (2.2), `useFocusTrap` (2.4) and `useScrollLock` (2.5). All are
       `value` / `label` / `count` and renders nothing. `TabPanel` is a **sibling**
       placed by the layout, wired by a shared `id`, so the layout decides what
       mounts. `aria-controls` is set only on the selected tab.
-- [ ] 6.2 `Accordion` — _needs 1.10_. Header is a `<button>` inside a heading
+- [x] 6.2 `Accordion` — _needs 1.10_. Header is a `<button>` inside a heading
       element. Takes a `headingLevel` prop — there is no `as`.
 - [ ] 6.3 `Sidebar` + `SidebarGroup` + `SidebarItem` — _needs 1.10_.
       `<nav aria-label>` landmark, current item `aria-current="page"`. Links come

@@ -373,6 +373,13 @@ export { Tooltip, type TooltipProps } from "./components/Overlays/Tooltip";
 
 // Components — Surfaces
 export {
+  Accordion,
+  type AccordionHeadingLevel,
+  accordionHeadingLevels,
+  type AccordionProps,
+  type AccordionSection,
+} from "./components/Surfaces/Accordion";
+export {
   Card,
   type CardElevation,
   cardElevations,
