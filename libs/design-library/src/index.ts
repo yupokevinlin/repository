@@ -56,6 +56,14 @@ export {
 
 // Components — Inputs
 export {
+  NumberInput,
+  numberInputDensities,
+  type NumberInputDensity,
+  type NumberInputProps,
+  type NumberInputSize,
+  numberInputSizes,
+} from "./components/Inputs/NumberInput";
+export {
   TextArea,
   textAreaDensities,
   type TextAreaDensity,

@@ -186,7 +186,7 @@ takes `label` / `hint` / `error` / `required` and renders its own `<label>`.
 - [x] 3.1 `TextArea` — `resize` (`none`/`horizontal`/`vertical`/`both`, default
       `vertical`) and `autoResize`; when `autoResize` is on it forces the vertical
       axis off
-- [ ] 3.2 `NumberInput` — `type="text"` + `inputMode="decimal"`, value always a
+- [x] 3.2 `NumberInput` — `type="text"` + `inputMode="decimal"`, value always a
       string, separators on blur and raw on focus. Never `type="number"`.
 - [ ] 3.3 `Checkbox` — the atom. Indeterminate is a real `aria-checked="mixed"`.
 - [ ] 3.4 `Radio` — the atom; standalone, not only inside a group
