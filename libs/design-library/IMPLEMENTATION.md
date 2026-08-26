@@ -144,7 +144,7 @@ Then, each depending on one of the above:
 
 - [x] 1.12 `AvatarGroup` — _needs 1.9_
 - [x] 1.13 `IconButton` — _needs `Button`_; `aria-label` required at the type level
-- [ ] 1.14 `ButtonGroup` — _needs `Button`_; owns the border-collapse and radius maths
+- [x] 1.14 `ButtonGroup` — _needs `Button`_; owns the border-collapse and radius maths
 
 ---
 
@@ -347,7 +347,7 @@ These are open at the project level. If an item runs into one, stop and ask.
 | Wave                         | Items | Done |
 | ---------------------------- | ----- | ---- |
 | 0 — foundations              | 7     | 7    |
-| 1 — independent primitives   | 14    | 13   |
+| 1 — independent primitives   | 14    | 14   |
 | 2 — shared internals         | 9     | 1    |
 | 3 — form controls            | 11    | 0    |
 | 4 — anchored overlays        | 14    | 0    |

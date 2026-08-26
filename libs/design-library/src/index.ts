@@ -14,6 +14,12 @@ export {
   buttonVariants,
 } from "./components/Buttons/Button";
 export {
+  ButtonGroup,
+  type ButtonGroupOrientation,
+  buttonGroupOrientations,
+  type ButtonGroupProps,
+} from "./components/Buttons/ButtonGroup";
+export {
   IconButton,
   type IconButtonProps,
 } from "./components/Buttons/IconButton";
