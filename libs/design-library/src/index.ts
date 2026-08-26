@@ -57,11 +57,11 @@ export {
 // Components — Inputs
 export {
   TextInput,
+  textInputDensities,
+  type TextInputDensity,
   type TextInputProps,
   type TextInputSize,
   textInputSizes,
-  type TextInputVariant,
-  textInputVariants,
 } from "./components/Inputs/TextInput";
 
 // Components — Feedback

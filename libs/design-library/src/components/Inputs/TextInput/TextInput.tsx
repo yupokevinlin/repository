@@ -1,67 +1,135 @@
 import type { ComponentPropsWithRef, ReactNode } from "react";
 
-import { cn } from "../../../tailwind/tailwindMerge/tailwindMerge";
 import {
-  type TextInputSize,
-  type TextInputStorybookState,
-  TextInputStyles,
-  type TextInputVariant,
-} from "./TextInputStyles";
+  FieldShell,
+  type FieldShellOwnProps,
+  useFieldShell,
+} from "../../Forms/FieldShell/FieldShell";
+import {
+  inputDensities,
+  type InputDensity,
+  type InputSize,
+  inputSizes,
+  InputSurfaceStyles,
+} from "../shared/inputSurfaceStyles";
 
-export const textInputVariants = [
-  "default",
-  "error",
-  "success",
-] as const satisfies Array<TextInputVariant>;
+export const textInputSizes = inputSizes;
+export const textInputDensities = inputDensities;
 
-export const textInputSizes = [
-  "8",
-  "10",
-  "12",
-] as const satisfies Array<TextInputSize>;
+export type TextInputSize = InputSize;
+export type TextInputDensity = InputDensity;
 
-export type { TextInputSize, TextInputVariant };
+export type TextInputProps = Omit<
+  ComponentPropsWithRef<"input">,
+  "size" | "id"
+> &
+  FieldShellOwnProps & {
+    /** Optional explicit id. One is generated when omitted. */
+    id?: string;
+    /** Height. `"8"` = 32px, `"10"` = 40px, `"12"` = 48px. Defaults to `"10"`. */
+    size?: TextInputSize;
+    /** Sized automatically to match `size`. */
+    startIcon?: ReactNode;
+    /** Sized automatically to match `size`. */
+    endIcon?: ReactNode;
+  };
 
-export type TextInputProps = Omit<ComponentPropsWithRef<"input">, "size"> & {
-  /** Semantic variant controlling border and focus-ring color. Defaults to `"default"`. */
-  variant?: TextInputVariant;
-  /** Height of the input as a Tailwind size unit (1 unit = 4px). `"8"` = 32px, `"10"` = 40px, `"12"` = 48px. Defaults to `"10"`. */
-  size?: TextInputSize;
-  /** Icon rendered to the left of the input. Sized automatically to match the input's `size`. */
-  startIcon?: ReactNode;
-  /** Icon rendered to the right of the input. Sized automatically to match the input's `size`. */
-  endIcon?: ReactNode;
-  /** @internal For Storybook gallery use only — forces a visual pseudo-state. */
-  _storybookState?: TextInputStorybookState;
-};
-
+/**
+ * A single line of text.
+ *
+ * It renders its own `<label>` and wires `for`/`id`, `aria-describedby` and
+ * `aria-invalid` internally (§5.1), so the association between label, hint,
+ * error and field cannot be broken by how it is composed.
+ *
+ * There is no `variant` prop. A field is invalid because it has an `error`,
+ * not because someone remembered to set a second prop to match — one source
+ * of truth, so the red border and the red message cannot disagree.
+ *
+ * Never use `placeholder` as a label: it vanishes the moment the user types,
+ * and leaves nobody able to check what a filled field was asking for.
+ *
+ * @client
+ *
+ * @example A labelled field
+ * ```tsx
+ * <TextInput label="Deal number" value={value} onChange={onChange} />
+ * ```
+ *
+ * @example With a hint, required
+ * ```tsx
+ * <TextInput
+ *   label="Counterparty"
+ *   hint="Legal entity name, as it appears on the contract."
+ *   required
+ * />
+ * ```
+ *
+ * @example Invalid — the border and the message come from the same prop
+ * ```tsx
+ * <TextInput label="Deal number" error="That deal number is already in use." />
+ * ```
+ *
+ * @example In a table-cell editor, with no label of its own
+ * ```tsx
+ * <TextInput aria-label="Quantity" size="8" density="compact" />
+ * ```
+ */
 export const TextInput = ({
-  variant: variantProp,
+  id,
+  label,
+  hint,
+  error,
+  required,
+  density,
   size: sizeProp,
   startIcon,
   endIcon,
   className: classNameProp,
   disabled,
-  _storybookState,
   ...remainingProps
 }: TextInputProps) => {
-  const variant: TextInputVariant = variantProp ?? "default";
   const size: TextInputSize = sizeProp ?? "10";
-  const className: string = classNameProp ?? "";
-  const wrapper: string = TextInputStyles.wrapperStyle({ variant, size });
-  const icon: string = TextInputStyles.iconStyle({ size });
-  const storybookStateStyle: string = _storybookState
-    ? TextInputStyles.getStorybookStateStyle(variant, _storybookState)
-    : "";
+  const { controlProps, fieldProps } = useFieldShell({
+    id,
+    label,
+    hint,
+    error,
+    required,
+    density,
+  });
+  const invalid: boolean = error !== undefined && error !== null;
+
   return (
-    <div className={cn(wrapper, storybookStateStyle, className)}>
-      {startIcon && <span className={icon}>{startIcon}</span>}
-      <input
-        {...remainingProps}
-        disabled={disabled}
-        className={TextInputStyles.inputStyle}
-      />
-      {endIcon && <span className={icon}>{endIcon}</span>}
-    </div>
+    <FieldShell {...fieldProps} className={classNameProp}>
+      <div
+        data-slot="text-input"
+        className={InputSurfaceStyles.inputSurfaceStyle({ invalid, size })}
+      >
+        {startIcon !== undefined && (
+          <span
+            data-slot="text-input-start-icon"
+            className={InputSurfaceStyles.inputIconStyle({ size })}
+          >
+            {startIcon}
+          </span>
+        )}
+        <input
+          data-slot="text-input-control"
+          type="text"
+          disabled={disabled}
+          className={InputSurfaceStyles.inputElementStyle()}
+          {...controlProps}
+          {...remainingProps}
+        />
+        {endIcon !== undefined && (
+          <span
+            data-slot="text-input-end-icon"
+            className={InputSurfaceStyles.inputIconStyle({ size })}
+          >
+            {endIcon}
+          </span>
+        )}
+      </div>
+    </FieldShell>
   );
 };
