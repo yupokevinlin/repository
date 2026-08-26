@@ -167,7 +167,7 @@ See §2.1 of `AGENTS.md` for the contract on each.
 - [x] 2.6 `Forms/Label/`
 - [x] 2.7 `Forms/HelperText/` — severity-styled hint and error text
 - [x] 2.8 `Forms/Fieldset/` — `<fieldset>` + `<legend>`, group-level disabled
-- [ ] 2.9 `FieldShell` (internal, non-exported) — _needs 2.6, 2.7_. Renders the
+- [x] 2.9 `FieldShell` (internal, non-exported) — _needs 2.6, 2.7_. Renders the
       `label` / `hint` / `error` / `required` props for every control and wires
       `for`/`id`, `aria-describedby` and `aria-invalid`. Not public API, so no
       barrel, gallery or story. See §5.1.
@@ -348,7 +348,7 @@ These are open at the project level. If an item runs into one, stop and ask.
 | ---------------------------- | ----- | ---- |
 | 0 — foundations              | 7     | 7    |
 | 1 — independent primitives   | 14    | 14   |
-| 2 — shared internals         | 9     | 8    |
+| 2 — shared internals         | 9     | 9    |
 | 3 — form controls            | 11    | 0    |
 | 4 — anchored overlays        | 14    | 0    |
 | 5 — modal overlays           | 5     | 0    |
