@@ -82,11 +82,37 @@ export {
   comboboxSizes,
 } from "./components/Inputs/Combobox";
 export {
+  DatePicker,
+  datePickerDensities,
+  type DatePickerDensity,
+  type DatePickerProps,
+  type DatePickerSize,
+  datePickerSizes,
+} from "./components/Inputs/DatePicker";
+export {
+  type DateRange,
+  DateRangePicker,
+  dateRangePickerDensities,
+  type DateRangePickerDensity,
+  type DateRangePickerProps,
+  type DateRangePickerSize,
+  dateRangePickerSizes,
+} from "./components/Inputs/DateRangePicker";
+export {
   FileDropzone,
   fileDropzoneDensities,
   type FileDropzoneDensity,
   type FileDropzoneProps,
 } from "./components/Inputs/FileDropzone";
+export {
+  type Money,
+  MoneyInput,
+  moneyInputDensities,
+  type MoneyInputDensity,
+  type MoneyInputProps,
+  type MoneyInputSize,
+  moneyInputSizes,
+} from "./components/Inputs/MoneyInput";
 export {
   NumberInput,
   numberInputDensities,
@@ -95,6 +121,16 @@ export {
   type NumberInputSize,
   numberInputSizes,
 } from "./components/Inputs/NumberInput";
+export {
+  type ConversionFactor,
+  type Quantity,
+  QuantityInput,
+  quantityInputDensities,
+  type QuantityInputDensity,
+  type QuantityInputProps,
+  type QuantityInputSize,
+  quantityInputSizes,
+} from "./components/Inputs/QuantityInput";
 export {
   Radio,
   radioDensities,
@@ -261,6 +297,7 @@ export {
 } from "./components/DataDisplay/Tag";
 
 // Components — Overlays
+export { Calendar, type CalendarProps } from "./components/Overlays/Calendar";
 export {
   ContextMenu,
   type ContextMenuProps,
@@ -269,6 +306,10 @@ export {
   DropdownMenu,
   type DropdownMenuProps,
 } from "./components/Overlays/DropdownMenu";
+export {
+  HoverCard,
+  type HoverCardProps,
+} from "./components/Overlays/HoverCard";
 export {
   MenuGroup,
   type MenuGroupProps,

@@ -144,6 +144,14 @@ export const FieldShell = ({
   const density: FieldShellDensity = densityProp ?? "comfortable";
   const hasHint: boolean = hint !== undefined && hint !== null;
   const hasError: boolean = error !== undefined && error !== null;
+  const hasLabel: boolean = label !== undefined && label !== null;
+
+  // With nothing to put around the control, the wrapper is an empty div that
+  // only gets in the way — in a table-cell editor, and when one control nests
+  // inside another (MoneyInput puts a Select inside its own field).
+  if (!hasLabel && !hasHint && !hasError && className === undefined) {
+    return children;
+  }
 
   return (
     <div

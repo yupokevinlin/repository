@@ -222,17 +222,17 @@ All need `Portal` (2.2) and `usePosition` (2.3).
 - [x] 4.6 `MenuItem` / `MenuGroup` / `MenuSeparator` — the shared menu children
 - [x] 4.7 `DropdownMenu` — _needs 4.6_. `role="menu"`, arrows, type-ahead, Esc.
 - [x] 4.8 `ContextMenu` — _needs 4.6_. Same items, opened at cursor coordinates.
-- [ ] 4.9 `HoverCard` — must open on focus and dismiss on Esc. If it cannot be
+- [x] 4.9 `HoverCard` — must open on focus and dismiss on Esc. If it cannot be
       reached by keyboard it is a `Popover`, not a `HoverCard`.
-- [ ] 4.10 `Calendar` — native `Date` at local midnight; `Intl` for month and
+- [x] 4.10 `Calendar` — native `Date` at local midnight; `Intl` for month and
       weekday names and week start. Grid keys: arrows by day, PageUp/Down by
       month, Home/End by week. Read §4.3 before writing any date maths.
-- [ ] 4.11 `DatePicker` — _needs 4.10, 4.2_
-- [ ] 4.12 `DateRangePicker` — _needs 4.10, 4.2_
-- [ ] 4.13 `MoneyInput` — _needs 4.4_. Amount + currency as one control, value a
+- [x] 4.11 `DatePicker` — _needs 4.10, 4.2_
+- [x] 4.12 `DateRangePicker` — _needs 4.10, 4.2_
+- [x] 4.13 `MoneyInput` — _needs 4.4_. Amount + currency as one control, value a
       string. The invariant this exists to enforce is that a currency never
       travels apart from its amount.
-- [ ] 4.14 `QuantityInput` — _needs 4.4_. Same shape for quantity + UOM, with the
+- [x] 4.14 `QuantityInput` — _needs 4.4_. Same shape for quantity + UOM, with the
       frozen conversion factor shown in the hint.
 
 ---
@@ -350,7 +350,7 @@ These are open at the project level. If an item runs into one, stop and ask.
 | 1 — independent primitives   | 14    | 14   |
 | 2 — shared internals         | 9     | 9    |
 | 3 — form controls            | 11    | 11   |
-| 4 — anchored overlays        | 14    | 0    |
+| 4 — anchored overlays        | 14    | 14   |
 | 5 — modal overlays           | 5     | 0    |
 | 6 — navigation and structure | 8     | 0    |
 
