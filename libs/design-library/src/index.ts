@@ -394,3 +394,16 @@ export {
   dividerOrientations,
   type DividerProps,
 } from "./components/Surfaces/Divider";
+
+// Components — Navigation
+export {
+  Tabs,
+  type TabsOrientation,
+  tabsOrientations,
+  type TabsProps,
+} from "./components/Navigation/Tabs";
+export { Tab, type TabProps } from "./components/Navigation/Tabs/Tab/Tab";
+export {
+  TabPanel,
+  type TabPanelProps,
+} from "./components/Navigation/Tabs/TabPanel/TabPanel";

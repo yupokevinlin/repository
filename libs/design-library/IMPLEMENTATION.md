@@ -257,7 +257,7 @@ All need `Portal` (2.2), `useFocusTrap` (2.4) and `useScrollLock` (2.5). All are
 
 ## Wave 6 — navigation and structure
 
-- [ ] 6.1 `Tabs` + `Tab` + `TabPanel` — `Tabs` is the strip only. `Tab` carries
+- [x] 6.1 `Tabs` + `Tab` + `TabPanel` — `Tabs` is the strip only. `Tab` carries
       `value` / `label` / `count` and renders nothing. `TabPanel` is a **sibling**
       placed by the layout, wired by a shared `id`, so the layout decides what
       mounts. `aria-controls` is set only on the selected tab.
