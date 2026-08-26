@@ -249,7 +249,7 @@ All need `Portal` (2.2), `useFocusTrap` (2.4) and `useScrollLock` (2.5). All are
 - [x] 5.3 `Drawer` — side sheet; the non-modal variant does not trap focus
 - [x] 5.4 `CommandPalette` — _needs 4.3_. Combobox semantics inside a modal dialog.
       The library owns the keyboard contract; the app owns the search.
-- [ ] 5.5 `Toast` + `ToastProvider` + `useToast` — imperative, not controlled. The
+- [x] 5.5 `Toast` + `ToastProvider` + `useToast` — imperative, not controlled. The
       **only** provider permitted in this package. `role="status"` / `aria-live`
       polite, `alert` / assertive for errors only.
 
