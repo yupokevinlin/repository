@@ -354,7 +354,9 @@ These are open at the project level. If an item runs into one, stop and ask.
 | 2 — shared internals         | 9     | 9    |
 | 3 — form controls            | 11    | 11   |
 | 4 — anchored overlays        | 14    | 14   |
-| 5 — modal overlays           | 5     | 0    |
-| 6 — navigation and structure | 8     | 0    |
+| 5 — modal overlays           | 5     | 5    |
+| 6 — navigation and structure | 8     | 8    |
 
-54 components, plus 3 backfilled and 2 ported.
+54 components, plus 3 backfilled and 2 ported. **Every item is done.**
+
+`Resizable` shipped as two components rather than three — see 6.6.
