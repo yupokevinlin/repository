@@ -104,6 +104,16 @@ export {
 
 // Components — Surfaces
 export {
+  Card,
+  type CardElevation,
+  cardElevations,
+  type CardPadding,
+  cardPaddings,
+  type CardProps,
+  cardSeverities,
+  type CardSeverity,
+} from "./components/Surfaces/Card";
+export {
   Divider,
   dividerEmphases,
   type DividerEmphasis,

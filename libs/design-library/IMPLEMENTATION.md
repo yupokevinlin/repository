@@ -132,7 +132,7 @@ nothing. It becomes the second reference implementation alongside `Button`.
 - [x] 1.5 `Skeleton` — `aria-hidden`, with `aria-busy` on the region it replaces
 - [x] 1.6 `ProgressBar` — `role="progressbar"`, severity thresholds, indeterminate
 - [x] 1.7 `Alert` — static, in-flow, **not** dismissible, **no** `role="alert"`
-- [ ] 1.8 `Card` — `<div>`, or `<button>` when `selectable` + `onClick`, which are
+- [x] 1.8 `Card` — `<div>`, or `<button>` when `selectable` + `onClick`, which are
       required together at the type level. No `href`.
 - [ ] 1.9 `Avatar` — initials fallback; `status` uses presence tokens and its
       meaning is in the accessible name, never the dot alone
@@ -346,7 +346,7 @@ These are open at the project level. If an item runs into one, stop and ask.
 | Wave                         | Items | Done |
 | ---------------------------- | ----- | ---- |
 | 0 — foundations              | 7     | 7    |
-| 1 — independent primitives   | 14    | 7    |
+| 1 — independent primitives   | 14    | 8    |
 | 2 — shared internals         | 9     | 0    |
 | 3 — form controls            | 11    | 0    |
 | 4 — anchored overlays        | 14    | 0    |
