@@ -133,6 +133,9 @@ export {
   tagSizes,
 } from "./components/DataDisplay/Tag";
 
+// Components — Overlays
+export { Portal, type PortalProps } from "./components/Overlays/Portal";
+
 // Components — Surfaces
 export {
   Card,

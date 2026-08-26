@@ -157,7 +157,7 @@ See §2.1 of `AGENTS.md` for the contract on each.
       uncontrolled otherwise. Used by ~22 components; without it that logic gets
       written 22 times. _Pulled forward — `Collapsible` (1.10) was the first
       stateful component and needed it._
-- [ ] 2.2 `Overlays/Portal/` — renders into `document.body`, SSR-safe. Explicit
+- [x] 2.2 `Overlays/Portal/` — renders into `document.body`, SSR-safe. Explicit
       §2 exception: no styles file, no gallery. Still ships a spec and a barrel.
 - [ ] 2.3 `src/hooks/usePosition/` — anchor, flip on the main axis, match trigger
       width, accept fixed coordinates for a cursor menu. Deliberately does **not**
@@ -348,7 +348,7 @@ These are open at the project level. If an item runs into one, stop and ask.
 | ---------------------------- | ----- | ---- |
 | 0 — foundations              | 7     | 7    |
 | 1 — independent primitives   | 14    | 14   |
-| 2 — shared internals         | 9     | 1    |
+| 2 — shared internals         | 9     | 2    |
 | 3 — form controls            | 11    | 0    |
 | 4 — anchored overlays        | 14    | 0    |
 | 5 — modal overlays           | 5     | 0    |

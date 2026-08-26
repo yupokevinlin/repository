@@ -14,6 +14,36 @@ const frame = (theme: string, children: React.ReactNode): React.ReactElement =>
     children,
   );
 
+/**
+ * The theme class also goes on <html>, not only on the frame below.
+ *
+ * Portalled content — every overlay in Waves 4 and 5 — renders into
+ * document.body, which sits outside the frame. Without this it inherits no
+ * token values at all and comes out unstyled. Production does the same thing:
+ * _document.tsx puts the class on <html>.
+ *
+ * In "Side by side" only one theme can own <html>, so portalled content is
+ * shown in light. Review an overlay in Light and Dark individually.
+ */
+const ThemeRoot = ({
+  theme,
+  children,
+}: {
+  theme: string;
+  children?: React.ReactNode;
+}): React.ReactNode => {
+  React.useEffect(() => {
+    const root = document.documentElement;
+    const applied = theme === "both" ? "theme-light" : theme;
+    root.classList.add(applied);
+    return () => {
+      root.classList.remove(applied);
+    };
+  }, [theme]);
+
+  return children;
+};
+
 const preview: Preview = {
   parameters: {
     controls: { matchers: { color: /(background|color)$/i, date: /Date$/ } },
@@ -49,16 +79,17 @@ const preview: Preview = {
       const theme = String(context.globals.theme ?? "theme-light");
       const story = React.createElement(Story);
 
-      if (theme === "both") {
-        return React.createElement(
-          "div",
-          { className: "grid grid-cols-1 md:grid-cols-2" },
-          frame("theme-light", story),
-          frame("theme-dark", story),
-        );
-      }
+      const framed =
+        theme === "both"
+          ? React.createElement(
+              "div",
+              { className: "grid grid-cols-1 md:grid-cols-2" },
+              frame("theme-light", story),
+              frame("theme-dark", story),
+            )
+          : frame(theme, story);
 
-      return frame(theme, story);
+      return React.createElement(ThemeRoot, { theme }, framed);
     },
   ],
 };
