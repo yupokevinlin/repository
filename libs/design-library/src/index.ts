@@ -74,3 +74,13 @@ export {
   type TagSize,
   tagSizes,
 } from "./components/DataDisplay/Tag";
+
+// Components — Surfaces
+export {
+  Divider,
+  dividerEmphases,
+  type DividerEmphasis,
+  type DividerOrientation,
+  dividerOrientations,
+  type DividerProps,
+} from "./components/Surfaces/Divider";

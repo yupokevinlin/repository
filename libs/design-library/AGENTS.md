@@ -260,6 +260,7 @@ Use these names. Do not introduce synonyms.
 | Semantic state          | `severity`                                                       | `status`, `intent`, `tone`                |
 | Style axis              | `variant` (colour role), `appearance` (fill: solid/soft/outline) | `type`, `kind`, `style`                   |
 | Placement               | `placement`                                                      | `position`, `side` (except `Drawer.side`) |
+| Prominence              | `emphasis` — `subtle` \| `default` \| `strong`                   | `weight`, `intensity`, `level`            |
 | Link styled as a button | `appearance="button"` on `Link`                                  | `as`, `render`, `asChild` — see §11       |
 
 Booleans are always positively phrased and default to `false`.

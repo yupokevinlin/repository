@@ -127,7 +127,7 @@ nothing. It becomes the second reference implementation alongside `Button`.
       what earlier drafts called `StatusChip`.
 - [x] 1.2 `Tag` — removable; the remove affordance is a real `<button>` with an
       `aria-label` naming what it removes
-- [ ] 1.3 `Divider` — `role="separator"` when separating, `aria-hidden` when decorative
+- [x] 1.3 `Divider` — `role="separator"` when separating, `aria-hidden` when decorative
 - [ ] 1.4 `Kbd` — no platform detection; the consumer passes the keys
 - [ ] 1.5 `Skeleton` — `aria-hidden`, with `aria-busy` on the region it replaces
 - [ ] 1.6 `ProgressBar` — `role="progressbar"`, severity thresholds, indeterminate
@@ -346,7 +346,7 @@ These are open at the project level. If an item runs into one, stop and ask.
 | Wave                         | Items | Done |
 | ---------------------------- | ----- | ---- |
 | 0 — foundations              | 7     | 7    |
-| 1 — independent primitives   | 14    | 2    |
+| 1 — independent primitives   | 14    | 3    |
 | 2 — shared internals         | 9     | 0    |
 | 3 — form controls            | 11    | 0    |
 | 4 — anchored overlays        | 14    | 0    |
