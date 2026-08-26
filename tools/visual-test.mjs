@@ -17,7 +17,7 @@
  *   npm run test:visual:update
  */
 import { spawn } from "node:child_process";
-import { createReadStream, existsSync, statSync } from "node:fs";
+import { createReadStream, existsSync, readFileSync, statSync } from "node:fs";
 import { createServer } from "node:http";
 import { extname, join, resolve } from "node:path";
 
@@ -50,6 +50,24 @@ if (!existsSync(STATIC_DIR)) {
       `  npx nx run <library>:build-storybook\n`,
   );
   process.exit(1);
+}
+
+/**
+ * A library with no stories yet is not a failure — erp-components is
+ * scaffolded and empty. The runner has no flag for this that it will accept,
+ * and it is a clearer thing to say out loud than to encode in a CLI switch:
+ * if the build has nothing to photograph, there is nothing to check.
+ */
+const indexFile = join(STATIC_DIR, "index.json");
+if (existsSync(indexFile)) {
+  const index = JSON.parse(readFileSync(indexFile, "utf8"));
+  const stories = Object.values(index.entries ?? {}).filter(
+    (entry) => entry.type === "story",
+  );
+  if (stories.length === 0) {
+    console.log("No stories in this library yet — nothing to photograph.");
+    process.exit(0);
+  }
 }
 
 const server = createServer((request, response) => {
