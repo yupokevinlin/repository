@@ -279,7 +279,7 @@ All need `Portal` (2.2), `useFocusTrap` (2.4) and `useScrollLock` (2.5). All are
       _Built without `ResizableHandle`_: a handle carries no data of its own, so
       per §9.1 it is not a child type. `Resizable` renders the splitters, since
       where the boundaries fall follows from where the panels are.
-- [ ] 6.7 `Timeline` + `TimelineItem` — `<ol>`; both timestamps (`event_at` and
+- [x] 6.7 `Timeline` + `TimelineItem` — `<ol>`; both timestamps (`event_at` and
       `recorded_at`) in the accessible name, not only visually
 - [ ] 6.8 `Stepper` + `Step` — `<ol>`, `aria-current="step"`. **Both orientations
       are first-class**; `orientation` is required with no default. States:

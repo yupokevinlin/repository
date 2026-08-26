@@ -308,6 +308,19 @@ export {
   type TagSize,
   tagSizes,
 } from "./components/DataDisplay/Tag";
+export {
+  differsInTime,
+  Timeline,
+  timelineDensities,
+  type TimelineDensity,
+  TimelineItem,
+  type TimelineItemProps,
+  type TimelineProps,
+  timelineSeverities,
+  type TimelineSeverity,
+  timestampLabel,
+  toDateTimeAttribute,
+} from "./components/DataDisplay/Timeline";
 
 // Components — Overlays
 export { Calendar, type CalendarProps } from "./components/Overlays/Calendar";
