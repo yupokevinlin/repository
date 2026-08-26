@@ -401,6 +401,20 @@ export {
   dividerOrientations,
   type DividerProps,
 } from "./components/Surfaces/Divider";
+export {
+  evenSizes,
+  initialSizes,
+  type PanelConstraint,
+  Resizable,
+  type ResizableOrientation,
+  resizableOrientations,
+  ResizablePanel,
+  type ResizablePanelProps,
+  type ResizableProps,
+  resize,
+  type ResizeArgs,
+  toggleCollapse,
+} from "./components/Surfaces/Resizable";
 
 // Components — Navigation
 export {
