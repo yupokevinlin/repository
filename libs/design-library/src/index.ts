@@ -301,6 +301,18 @@ export {
   kbdSizes,
 } from "./components/DataDisplay/Kbd";
 export {
+  Step,
+  Stepper,
+  stepperDensities,
+  type StepperDensity,
+  type StepperOrientation,
+  stepperOrientations,
+  type StepperProps,
+  type StepProps,
+  type StepStatus,
+  stepStatuses,
+} from "./components/DataDisplay/Stepper";
+export {
   Tag,
   type TagAppearance,
   tagAppearances,

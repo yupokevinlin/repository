@@ -281,7 +281,7 @@ All need `Portal` (2.2), `useFocusTrap` (2.4) and `useScrollLock` (2.5). All are
       where the boundaries fall follows from where the panels are.
 - [x] 6.7 `Timeline` + `TimelineItem` — `<ol>`; both timestamps (`event_at` and
       `recorded_at`) in the accessible name, not only visually
-- [ ] 6.8 `Stepper` + `Step` — `<ol>`, `aria-current="step"`. **Both orientations
+- [x] 6.8 `Stepper` + `Step` — `<ol>`, `aria-current="step"`. **Both orientations
       are first-class**; `orientation` is required with no default. States:
       complete / current / upcoming / blocked / revisited.
 

@@ -57,7 +57,9 @@ export const markerStyle = cva(
  */
 export const connectorStyle = cva([
   "absolute bottom-0 left-1/2 top-5 w-px -translate-x-1/2",
-  "bg-border-muted",
+  // `border-default`, not `border-muted`: the line is what makes the entries
+  // read as one sequence, and muted is near-white in the light theme.
+  "bg-border-default",
 ]);
 
 /**
