@@ -3,21 +3,18 @@ import { cva } from "class-variance-authority";
 export type FieldsetDensity = "comfortable" | "compact";
 
 /**
+ * A plain block, not a flex container.
+ *
+ * A rendered `<legend>` does not participate in its fieldset's flex layout —
+ * browsers lay it out specially — so a `gap` here silently applies to nothing
+ * and the legend ends up jammed against the controls. The spacing below the
+ * legend is therefore the legend's own margin.
+ *
  * `min-w-0` because a `<fieldset>` has a UA `min-width: min-content` that
  * ignores flex and grid sizing — without it a fieldset in a grid column
  * refuses to shrink and overflows its track.
  */
-export const fieldsetStyle = cva(["flex min-w-0 flex-col border-0 p-0 m-0"], {
-  variants: {
-    density: {
-      comfortable: "gap-3",
-      compact: "gap-2",
-    },
-  },
-  defaultVariants: {
-    density: "comfortable",
-  },
-});
+export const fieldsetStyle = cva(["min-w-0 border-0 p-0 m-0"]);
 
 export const legendStyle = cva(
   [
@@ -28,8 +25,8 @@ export const legendStyle = cva(
   {
     variants: {
       density: {
-        comfortable: "text-label-md",
-        compact: "text-label-sm",
+        comfortable: "text-label-md mb-2",
+        compact: "text-label-sm mb-1.5",
       },
     },
     defaultVariants: {

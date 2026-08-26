@@ -32,6 +32,14 @@ export {
 
 // Components — Forms
 export {
+  Fieldset,
+  fieldsetDensities,
+  type FieldsetDensity,
+  type FieldsetOrientation,
+  fieldsetOrientations,
+  type FieldsetProps,
+} from "./components/Forms/Fieldset";
+export {
   HelperText,
   helperTextDensities,
   type HelperTextDensity,
